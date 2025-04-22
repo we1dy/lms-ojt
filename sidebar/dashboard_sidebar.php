@@ -4,7 +4,7 @@
 		<ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
 		<li class="active"><a href="student_dashboard.php"><i class="icon-chevron-right"></i><i class="icon-group"></i>&nbsp;Departments</a></li>
 
-			<li class=""><a href="dashboard_student.php"><i class="icon-chevron-right"></i><i class="icon-group"></i>&nbsp;My Class</a></li>
+			<li class=""><a href="dashboard_student.php"><i class="icon-chevron-right"></i><i class="icon-group"></i>&nbsp;Courses</a></li>
 			<li class="">
 				<a href="student_notification.php"><i class="icon-chevron-right"></i><i class="icon-info-sign"></i>&nbsp;Notification
 				<?php if($not_read == '0'){
