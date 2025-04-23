@@ -23,11 +23,11 @@
 				success: function (html) {
 					if (html == 'true') {
 						$.jGrowl("Loading File Please Wait......", { sticky: true });
-						$.jGrowl("Welcome to CHMSC Learning Management System", { header: 'Access Granted' });
+						$.jGrowl("Welcome to PBCOM Learning Management System", { header: 'Access Granted' });
 						var delay = 1000;
 						setTimeout(function () { window.location = 'dasboard_teacher.php' }, delay);
 					} else if (html == 'true_student') {
-						$.jGrowl("Welcome to CHMSC Learning Management System", { header: 'Access Granted' });
+						$.jGrowl("Welcome to PBCOM Learning Management System", { header: 'Access Granted' });
 						var delay = 1000;
 						setTimeout(function () { window.location = 'student_notification.php' }, delay);
 					} else {
@@ -40,7 +40,7 @@
 	});
 </script>
 <div id="button_form" class="form-signin">
-	New to CHMSC OLMS
+	New to PBCOM LMS
 	<hr>
 	<h3 class="form-signin-heading"><i class="icon-edit"></i> Activate your Account</h3>
 	<button data-placement="top" title="Sign In as Student" id="signin_student"
