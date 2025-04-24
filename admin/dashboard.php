@@ -20,50 +20,50 @@
 							        <div class="span12">
 						
 									<?php 
-								$query_reg_teacher = mysqli_query($conn,"select * from teacher where teacher_status = 'Registered' ")or die(mysqli_error());
-								$count_reg_teacher = mysqli_num_rows($query_reg_teacher);
+								$query_reg_admin = mysqli_query($conn,"select * from admin where admin_status = 'Registered' ")or die(mysqli_error());
+								$count_reg_admin = mysqli_num_rows($query_reg_admin);
 								?>
 								
                                 <!-- <div class="span3">
-                                    <div class="chart" data-percent="<?php echo $count_reg_teacher; ?>"><?php echo $count_reg_teacher; ?></div>
-                                    <div class="chart-bottom-heading"><strong>Registered Teacher</strong>
+                                    <div class="chart" data-percent="<?php echo $count_reg_admin; ?>"><?php echo $count_reg_admin; ?></div>
+                                    <div class="chart-bottom-heading"><strong>Registered admin</strong>
 
                                     </div>
                                 </div> -->
 								
 								<?php 
-								$query_teacher = mysqli_query($conn,"select * from teacher")or die(mysqli_error());
-								$count_teacher = mysqli_num_rows($query_teacher);
+								$query_admin = mysqli_query($conn,"select * from admin")or die(mysqli_error());
+								$count_admin = mysqli_num_rows($query_admin);
 								?>
 								
 								
                                 <div class="span3">
-                                    <div class="chart" data-percent="<?php echo $count_teacher; ?>"><?php echo $count_teacher ?></div>
+                                    <div class="chart" data-percent="<?php echo $count_admin; ?>"><?php echo $count_admin ?></div>
                                     <div class="chart-bottom-heading"><strong>Admins</strong>
 
                                     </div>
                                 </div>
 								
 								<?php 
-								$query_student = mysqli_query($conn,"select * from student where status='Registered'")or die(mysqli_error());
-								$count_student = mysqli_num_rows($query_student);
+								$query_employee = mysqli_query($conn,"select * from employee where status='Registered'")or die(mysqli_error());
+								$count_employee = mysqli_num_rows($query_employee);
 								?>
 								
                                 <!-- <div class="span3">
-                                    <div class="chart" data-percent="<?php echo $count_student ?>"><?php echo $count_student ?></div>
-                                    <div class="chart-bottom-heading"><strong>Registered Students</strong>
+                                    <div class="chart" data-percent="<?php echo $count_employee ?>"><?php echo $count_employee ?></div>
+                                    <div class="chart-bottom-heading"><strong>Registered employees</strong>
 
                                     </div>
                                 </div> -->
 								
 								
 										<?php 
-								$query_student = mysqli_query($conn,"select * from student")or die(mysqli_error());
-								$count_student = mysqli_num_rows($query_student);
+								$query_employee = mysqli_query($conn,"select * from employee")or die(mysqli_error());
+								$count_employee = mysqli_num_rows($query_employee);
 								?>
 								
                                 <div class="span3">
-                                    <div class="chart" data-percent="<?php echo $count_student ?>"><?php echo $count_student ?></div>
+                                    <div class="chart" data-percent="<?php echo $count_employee ?>"><?php echo $count_employee ?></div>
                                     <div class="chart-bottom-heading"><strong>Employee</strong>
 
                                     </div>
@@ -101,12 +101,12 @@
 								
 								
 										<?php 
-								$query_subject = mysqli_query($conn,"select * from subject")or die(mysqli_error());
-								$count_subject = mysqli_num_rows($query_subject);
+								$query_course = mysqli_query($conn,"select * from course")or die(mysqli_error());
+								$count_course = mysqli_num_rows($query_course);
 								?>
 								
                                 <div class="span3">
-                                    <div class="chart" data-percent="<?php echo $count_subject; ?>"><?php echo $count_subject; ?></div>
+                                    <div class="chart" data-percent="<?php echo $count_course; ?>"><?php echo $count_course; ?></div>
                                     <div class="chart-bottom-heading"><strong>Courses</strong>
 
                                     </div>

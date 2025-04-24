@@ -1,7 +1,7 @@
 <?php include('header_dashboard.php'); ?>
 <?php include('session.php'); ?>
 <body>
-		<?php include('navbar_student.php'); ?>
+		<?php include('navbar_employee.php'); ?>
         <div class="container-fluid">
             <div class="row-fluid">
 				<?php include('sidebar/backpack_sidebar.php'); ?>
@@ -35,7 +35,7 @@
 								</script>					
 							</div>
 								<?php
-								$query_backpack = mysqli_query($conn,"select * FROM student_backpack where student_id = '$session_id'  order by fdatein DESC ")or die(mysqli_error());
+								$query_backpack = mysqli_query($conn,"select * FROM employee_backpack where employee_id = '$session_id'  order by fdatein DESC ")or die(mysqli_error());
 								$num_row = mysqli_num_rows($query_backpack);
 								if ($num_row > 0){
 								?>
@@ -54,7 +54,7 @@
 										</thead>
 										<tbody>
                               		<?php
-										$query = mysqli_query($conn,"select * FROM student_backpack where student_id = '$session_id'  order by fdatein DESC ")or die(mysqli_error());
+										$query = mysqli_query($conn,"select * FROM employee_backpack where employee_id = '$session_id'  order by fdatein DESC ")or die(mysqli_error());
 										while($row = mysqli_fetch_array($query)){
 										$id  = $row['file_id'];
 									?>                              

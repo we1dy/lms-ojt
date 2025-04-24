@@ -6,7 +6,7 @@
  $get_id1 = $_POST['id'];
  ?>
     <body>
-		<?php include('navbar_teacher.php'); ?>
+		<?php include('navbar_admin.php'); ?>
         <div class="container-fluid">
             <div class="row-fluid">
 				<?php include('annoucement_link.php'); ?>
@@ -15,16 +15,16 @@
                      <div class="row-fluid">
 					  <!-- breadcrumb -->
 				
-										<?php $class_query = mysqli_query($conn,"select * from teacher_class
-										LEFT JOIN class ON class.class_id = teacher_class.class_id
-										LEFT JOIN subject ON subject.subject_id = teacher_class.subject_id
-										where teacher_class_id = '$get_id'")or die(mysqli_error());
+										<?php $class_query = mysqli_query($conn,"select * from admin_class
+										LEFT JOIN class ON class.class_id = admin_class.class_id
+										LEFT JOIN course ON course.course_id = admin_class.course_id
+										where admin_class_id = '$get_id'")or die(mysqli_error());
 										$class_row = mysqli_fetch_array($class_query);
 										?>
 				
 					     <ul class="breadcrumb">
 							<li><a href="#"><?php echo $class_row['class_name']; ?></a> <span class="divider">/</span></li>
-							<li><a href="#"><?php echo $class_row['subject_code']; ?></a> <span class="divider">/</span></li>
+							<li><a href="#"><?php echo $class_row['course_code']; ?></a> <span class="divider">/</span></li>
 							<li><a href="#"><b>Announcements</b></a></li>
 						</ul>
 						 <!-- end breadcrumb -->
@@ -42,11 +42,11 @@
 								<br>
 								<form method="post">
 									 <?php
-								 $query_announcement = mysqli_query($conn,"select * from teacher_class_announcements
-																	where teacher_id = '$session_id' and teacher_class_announcements_id = '$get_id1'  and  teacher_class_id = '$get_id' order by date DESC
+								 $query_announcement = mysqli_query($conn,"select * from admin_class_announcements
+																	where admin_id = '$session_id' and admin_class_announcements_id = '$get_id1'  and  admin_class_id = '$get_id' order by date DESC
 																	")or die(mysqli_error());
 								$row = mysqli_fetch_array($query_announcement);
-								 $id = $row['teacher_class_announcements_id'];
+								 $id = $row['admin_class_announcements_id'];
 								 ?>
 								 <input type="hidden" name="id" value="<?php echo $id; ?>">
 								<textarea name="content" id="ckeditor_full">
@@ -62,7 +62,7 @@
 									$content = $_POST['content'];
 									$id = $_POST['id'];
 									
-									mysqli_query($conn,"update teacher_class_announcements  set content = '$content' where teacher_class_announcements_id = '$id' ")or die(mysqli_error());
+									mysqli_query($conn,"update admin_class_announcements  set content = '$content' where admin_class_announcements_id = '$id' ")or die(mysqli_error());
 									?>
 									<script>
 									 window.location = 'announcements.php<?php echo '?id='.$get_id; ?>'; 

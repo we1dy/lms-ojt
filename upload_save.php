@@ -8,7 +8,7 @@ $errmsg_arr = array();
 $errflag = false;
 
 $conn = $connector->DbConnector();
-$uploaded_by_query = mysqli_query($conn,"select * from teacher where teacher_id = '$session_id'")or die(mysqli_error());
+$uploaded_by_query = mysqli_query($conn,"select * from admin where admin_id = '$session_id'")or die(mysqli_error());
 $uploaded_by_query_row = mysqli_fetch_array($uploaded_by_query);
 $uploaded_by = $uploaded_by_query_row['firstname']."".$uploaded_by_query_row['lastname'];
 
@@ -27,7 +27,7 @@ function clean($str) {
 
 //Sanitize the POST values
 $filedesc = clean($_POST['desc']);
-//$subject= clean($_POST['upname']);
+//$course= clean($_POST['upname']);
 
 if ($filedesc == '') {
     $errmsg_arr[] = ' file discription is missing';
@@ -72,10 +72,10 @@ if ((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 
             if ((move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $newname))) {
                 //successful upload
                 // echo "It's done! The file has been saved as: ".$newname;		  
-                // echo "INSERT INTO files (fdesc,floc,fdatein,teacher_id,class_id,fname,uploaded_by) VALUES ('$filedesc','$newname',NOW(),'$session_id','$id_class','$name','$uploaded_by')"; 
+                // echo "INSERT INTO files (fdesc,floc,fdatein,admin_id,class_id,fname,uploaded_by) VALUES ('$filedesc','$newname',NOW(),'$session_id','$id_class','$name','$uploaded_by')"; 
                 // exit;
-                $qry2 = "INSERT INTO files (fdesc,floc,fdatein,teacher_id,class_id,fname,uploaded_by) VALUES ('$filedesc','$newname',NOW(),'$session_id','$id_class','$name','$uploaded_by')";
-				mysqli_query($conn,"insert into notification (teacher_class_id,notification,date_of_notification,link) value('$get_id','$name_notification',NOW(),'downloadable_student.php')")or die(mysqli_error());
+                $qry2 = "INSERT INTO files (fdesc,floc,fdatein,admin_id,class_id,fname,uploaded_by) VALUES ('$filedesc','$newname',NOW(),'$session_id','$id_class','$name','$uploaded_by')";
+				mysqli_query($conn,"insert into notification (admin_class_id,notification,date_of_notification,link) value('$get_id','$name_notification',NOW(),'downloadable_employee.php')")or die(mysqli_error());
 			   //$result = @mysqli_query($conn,$qry);
                 $result2 = $connector->query($qry2);
                 if ($result2) {

@@ -24,16 +24,16 @@
                                         </div>
 										
 										<div class="control-group">
-											<label>Subject:</label>
+											<label>course:</label>
                                           <div class="controls">
-                                            <select name="subject_id"  class="" required>
+                                            <select name="course_id"  class="" required>
                                              	<option></option>
 											<?php
-											$query = mysqli_query($conn,"select * from subject order by subject_code");
+											$query = mysqli_query($conn,"select * from course order by course_code");
 											while($row = mysqli_fetch_array($query)){
 											
 											?>
-											<option value="<?php echo $row['subject_id']; ?>"><?php echo $row['subject_code']; ?></option>
+											<option value="<?php echo $row['course_id']; ?>"><?php echo $row['course_code']; ?></option>
 											<?php } ?>
                                             </select>
                                           </div>
@@ -73,7 +73,7 @@
 						}else{
 							$.jGrowl("Classs Successfully  Added", { header: 'Class Added' });
 							var delay = 500;
-							setTimeout(function(){ window.location = 'dasboard_teacher.php'  }, delay);  
+							setTimeout(function(){ window.location = 'dasboard_admin.php'  }, delay);  
 						}
 						}
 					});

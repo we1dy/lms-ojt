@@ -2,22 +2,22 @@
 <?php include('session.php'); ?>
 <?php $get_id = $_GET['id']; ?>
     <body>
-		<?php include('navbar_teacher.php'); ?>
+		<?php include('navbar_admin.php'); ?>
         <div class="container-fluid">
             <div class="row-fluid">
 				<?php include('assignment_link.php'); ?>
                 <div class="span6" id="content">
                      <div class="row-fluid">
 					   <!-- breadcrumb -->
-										<?php $class_query = mysqli_query($conn,"select * from teacher_class
-										LEFT JOIN class ON class.class_id = teacher_class.class_id
-										LEFT JOIN subject ON subject.subject_id = teacher_class.subject_id
-										where teacher_class_id = '$get_id'")or die(mysqli_error());
+										<?php $class_query = mysqli_query($conn,"select * from admin_class
+										LEFT JOIN class ON class.class_id = admin_class.class_id
+										LEFT JOIN course ON course.course_id = admin_class.course_id
+										where admin_class_id = '$get_id'")or die(mysqli_error());
 										$class_row = mysqli_fetch_array($class_query);
 										?>
 					     <ul class="breadcrumb">
 							<li><a href="#"><?php echo $class_row['class_name']; ?></a> <span class="divider">/</span></li>
-							<li><a href="#"><?php echo $class_row['subject_code']; ?></a> <span class="divider">/</span></li>
+							<li><a href="#"><?php echo $class_row['course_code']; ?></a> <span class="divider">/</span></li>
 							<li><a href="#">School Year: <?php echo $class_row['school_year']; ?></a> <span class="divider">/</span></li>
 							<li><a href="#"><b>Uploaded Assignments</b></a></li>
 						</ul>
@@ -41,7 +41,7 @@
 										<tbody>
 											
                               		<?php
-										$query = mysqli_query($conn,"select * FROM assignment where class_id = '$get_id' and teacher_id = '$session_id' order by fdatein DESC ")or die(mysqli_error());
+										$query = mysqli_query($conn,"select * FROM assignment where class_id = '$get_id' and admin_id = '$session_id' order by fdatein DESC ")or die(mysqli_error());
 										while($row = mysqli_fetch_array($query)){
 										$id  = $row['assignment_id'];
 										$floc  = $row['floc'];
@@ -53,7 +53,7 @@
                                          <td width="150">
 										  <form method="post" action="view_submit_assignment.php<?php echo '?id='.$get_id ?>&<?php echo 'post_id='.$id ?>">
 										
-										 <button data-placement="bottom" title="View Student who submit Assignment" id="<?php echo $id; ?>view" class="btn btn-success"><i class="icon-folder-open-alt icon-large"></i></button>
+										 <button data-placement="bottom" title="View employee who submit Assignment" id="<?php echo $id; ?>view" class="btn btn-success"><i class="icon-folder-open-alt icon-large"></i></button>
 
 										</form>
 										<?php 

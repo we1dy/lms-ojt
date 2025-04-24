@@ -5,7 +5,7 @@ $id=$_POST['selector'];
 $N = count($id);
 for($i=0; $i < $N; $i++)
 {
-	$result = mysqli_query($conn,"DELETE FROM student_backpack where file_id='$id[$i]'");
+	$result = mysqli_query($conn,"DELETE FROM employee_backpack where file_id='$id[$i]'");
 }
 header("location: backpack.php");
 }
