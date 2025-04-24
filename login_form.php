@@ -1,8 +1,9 @@
 <style>
   /* Login form styles */
+
   .login-card {
     background: white;
-    border-radius: 0.75rem;
+    border-radius: 1.5rem !important;
     padding: 2rem;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     max-width: 40rem !important;
@@ -18,7 +19,7 @@
     left: 0;
     width: 100%;
     height: 6px;
-    background: linear-gradient(90deg, #dc2626, #ef4444);
+    /* background: linear-gradient(90deg, #dc2626, #ef4444); */
   }
 
   .login-title {
@@ -32,19 +33,19 @@
   .login-subtitle {
     text-align: center;
     color: #6b7280;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-size: 0.95rem;
   }
 
   .form-group {
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.2rem;
     position: relative;
   }
 
   .form-label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #374151;
     font-size: 0.95rem;
   }
@@ -53,7 +54,7 @@
     width: 100%;
     padding: 0.5rem 0.5rem;
     border: 1px solid #d1d5db;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     font-size: 1rem;
     transition: all 0.3s ease;
     box-sizing: border-box;
@@ -77,11 +78,10 @@
     color: white;
     border: none;
     border-radius: 0.5rem;
-    padding: 0.85rem;
+    padding: 0.7rem;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-    margin-top: 1rem;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
