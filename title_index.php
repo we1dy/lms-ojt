@@ -1,16 +1,15 @@
 <div class="row-fluid">
 
-	<div class="span120">
+	<div class="span10">
 
 	</div>
 
 </div>
-<div class="row-fluid">
-
+<div class="row-fluid mt-4">
 	<div class="span4">
 		<img class="index_logo" style="border-radius: 5px;" src="admin/images/pbcom.png">
 	</div>
-	<div class="span8">
+	<div class="span4">
 
 		<div class="title">
 			<p class="chmsc">Rufino St Ayala Ave</p>

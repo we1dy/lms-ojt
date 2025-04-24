@@ -1,39 +1,39 @@
 /** Home Page **/
 body {
-	padding-top: 60px;
-	padding-bottom: 40px;
-	background-color: #f5f5f5;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
 }
 
 /** Login Page **/
 #login {
-    padding-top: 40px;
-    padding-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 #login .form-signin {
-    max-width: 300px;
-    padding: 19px 29px 29px;
-    margin: 0 auto 20px;
-    background-color: #fff;
-    border: 1px solid #e5e5e5;
-    -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-            border-radius: 5px;
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-       -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 #login .form-signin .form-signin-heading,
 #login .form-signin .checkbox {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 #login .form-signin input[type="text"],
 #login .form-signin input[type="password"] {
-    font-size: 16px;
-    height: auto;
-    margin-bottom: 15px;
-    padding: 7px 9px;
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
 }
 
 /** 2 level sub menu **/
@@ -70,55 +70,57 @@ body {
 
 /** Global **/
 #content {
-  margin-left:0px;
+  margin-left: 0px;
 }
-.hide-sidebar, .show-sidebar {
+.hide-sidebar,
+.show-sidebar {
   cursor: pointer;
 }
 .padd-bottom {
   margin-bottom: 5px;
 }
 .breadcrumb {
-	margin: 0 0 0px;
-	padding: 10px 0px;
-	background-color: transparent;
+  margin: 0 0 0px;
+  padding: 10px 0px;
+  background-color: transparent;
 }
 
 .block {
-	background: url("../images/pixel-60fff.png") repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
-	border: 1px solid #ccc;
-	background: white;
-	margin: 1em 0em;
-	border-top: none;
-	-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 6, 0.75);
-	-moz-box-shadow:    2px 2px 5px rgba(0, 0, 6, 0.75);
-	box-shadow:         2px 2px 5px rgba(0, 0, 6, 0.75);
+  background: url("../images/pixel-60fff.png") repeat scroll 0 0
+    rgba(0, 0, 0, 0) !important;
+  border: 1px solid #ccc;
+  background: white;
+  margin: 1em 0em;
+  border-top: none;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 6, 0.75);
+  -moz-box-shadow: 2px 2px 5px rgba(0, 0, 6, 0.75);
+  box-shadow: 2px 2px 5px rgba(0, 0, 6, 0.75);
 }
 
 .block-content {
-	margin: 1em;
-	min-height: .25em;
+  margin: 1em;
+  min-height: 0.25em;
 }
 
 .block-header {
-	margin-bottom: 0px;
-	border-right: none;
-	border-left: none;
-	-webkit-border-radius: 0px;
-	-moz-border-radius: 0px;
-	border-radius: 0px;
+  margin-bottom: 0px;
+  border-right: none;
+  border-left: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
 }
 .block-header div {
-	padding-top: 10px;
+  padding-top: 10px;
 }
 
 .easyPieChart {
-	margin: 0px auto;
+  margin: 0px auto;
 }
 
 .chart-bottom-heading {
-	margin-top: 5px;
-	text-align: center;
+  margin-top: 5px;
+  text-align: center;
 }
 
 /** Side Bar **/
@@ -128,11 +130,11 @@ body {
   padding: 0;
   background-color: #fff;
   -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
-     -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
-          box-shadow: 0 1px 4px rgba(0,0,0,.065);
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
 }
 .bs-docs-sidenav > li > a {
   display: block;
@@ -143,36 +145,39 @@ body {
 }
 .bs-docs-sidenav > li:first-child > a {
   -webkit-border-radius: 6px 6px 0 0;
-     -moz-border-radius: 6px 6px 0 0;
-          border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 0 0;
 }
 .bs-docs-sidenav > li:last-child > a {
   -webkit-border-radius: 0 0 6px 6px;
-     -moz-border-radius: 0 0 6px 6px;
-          border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
 }
 .bs-docs-sidenav > .active > a {
   position: relative;
   z-index: 2;
   padding: 9px 15px;
   border: 0;
-  text-shadow: 0 1px 0 rgba(0,0,0,.15);
-  -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
-     -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
-          box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1),
+    inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1),
+    inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1),
+    inset -1px 0 0 rgba(0, 0, 0, 0.1);
 }
 /* Chevrons */
 .bs-docs-sidenav .icon-chevron-right {
   float: right;
   margin-top: 2px;
   margin-right: -6px;
-  opacity: .25;
+  opacity: 0.25;
 }
 .bs-docs-sidenav > li > a:hover {
   background-color: #f5f5f5;
 }
 .bs-docs-sidenav a:hover .icon-chevron-right {
-  opacity: .5;
+  opacity: 0.5;
 }
 .bs-docs-sidenav .active .icon-chevron-right,
 .bs-docs-sidenav .active a:hover .icon-chevron-right {
@@ -199,5 +204,5 @@ body {
   line-height: 25px;
 }
 .the-icons i:hover {
-  background-color: rgba(255,0,0,.25);
+  background-color: rgba(255, 0, 0, 0.25);
 }
