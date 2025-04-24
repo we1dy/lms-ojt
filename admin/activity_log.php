@@ -63,6 +63,5 @@
         </div>
 		<?php include('script.php'); ?>
     </body>
-    <!-- trial -->
 
 </html>
