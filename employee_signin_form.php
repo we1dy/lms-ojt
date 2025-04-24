@@ -9,7 +9,7 @@
 			<input type="text" class="input-block-level" id="firstname" name="firstname" placeholder="Firstname" required>
 			<input type="text" class="input-block-level" id="lastname" name="lastname" placeholder="Lastname" required>
 			<label>Department</label>
-			<select name="class_id" class="input-block-level span5"> 
+			<select name="class_id" class="input-block-level span5">
 				<option></option>
 				<?php
 				$query = mysqli_query($conn,"select * from class order by class_name ")or die(mysqli_error());
@@ -25,7 +25,7 @@
 			<button id="signin" name="login" class="btn btn-info" type="submit"><i class="icon-check icon-large"></i> Sign in</button>
 			</form>
 			
-		<!-- try -->
+		
 			
 			<script>
 			jQuery(document).ready(function(){
