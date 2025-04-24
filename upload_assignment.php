@@ -22,7 +22,7 @@ function clean($str) {
 
 //Sanitize the POST values
 $filedesc = clean($_POST['desc']);
-//$course= clean($_POST['upname']);
+//$subject= clean($_POST['upname']);
 
 if ($filedesc == '') {
     $errmsg_arr[] = ' file discription is missing';
@@ -67,8 +67,8 @@ if ((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 
             if ((move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $newname))) {
                 //successful upload
                 // echo "It's done! The file has been saved as: ".$newname;		   
-                $qry2 = ("INSERT INTO employee_assignment (fdesc,floc,assignment_fdatein,fname,assignment_id,employee_id) VALUES ('$filedesc','$newname',NOW(),'$name','$assignment_id','$session_id')")or die(mysqli_error());
-				mysqli_query($conn,"insert into admin_notification (admin_class_id,notification,date_of_notification,link,employee_id,assignment_id) value('$get_id','$name_notification',NOW(),'view_submit_assignment.php','$session_id','$assignment_id')")or die(mysqli_error());
+                $qry2 = ("INSERT INTO student_assignment (fdesc,floc,assignment_fdatein,fname,assignment_id,student_id) VALUES ('$filedesc','$newname',NOW(),'$name','$assignment_id','$session_id')")or die(mysqli_error());
+				mysqli_query($conn,"insert into teacher_notification (teacher_class_id,notification,date_of_notification,link,student_id,assignment_id) value('$get_id','$name_notification',NOW(),'view_submit_assignment.php','$session_id','$assignment_id')")or die(mysqli_error());
 			   //$result = @mysqli_query($conn,$qry);
                 $result2 = $connector->query($qry2);
                 if ($result2) {

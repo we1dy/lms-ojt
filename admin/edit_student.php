@@ -5,22 +5,22 @@
 		<?php include('navbar.php'); ?>
         <div class="container-fluid">
             <div class="row-fluid">
-				<?php include('employee_sidebar.php'); ?>
+				<?php include('student_sidebar.php'); ?>
 				<div class="span3" id="adduser">
-				<?php include('edit_employees_form.php'); ?>		   			
+				<?php include('edit_students_form.php'); ?>		   			
 				</div>
                 <div class="span6" id="">
                      <div class="row-fluid">
                         <!-- block -->
                         <div id="block_bg" class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">employee List</div>
+                                <div class="muted pull-left">Student List</div>
                             </div>
                             <div class="block-content collapse in">
 									<div class="span12">
-									<form action="delete_employee.php" method="post">
+									<form action="delete_student.php" method="post">
   									<table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
-									<a data-toggle="modal" href="#employee_delete" id="delete"  class="btn btn-danger" name=""><i class="icon-trash icon-large"></i></a>
+									<a data-toggle="modal" href="#student_delete" id="delete"  class="btn btn-danger" name=""><i class="icon-trash icon-large"></i></a>
 									<?php include('modal_delete.php'); ?>
 										<thead>
 										  <tr>
@@ -36,9 +36,9 @@
 										<tbody>
 											
                                          <?php
-                                    $query = mysqli_query($conn,"select * from employee LEFT JOIN class ON class.class_id = employee.class_id ORDER BY employee.employee_id DESC") or die(mysqli_error());
+                                    $query = mysqli_query($conn,"select * from student LEFT JOIN class ON class.class_id = student.class_id ORDER BY student.student_id DESC") or die(mysqli_error());
                                     while ($row = mysqli_fetch_array($query)) {
-                                        $id = $row['employee_id'];
+                                        $id = $row['student_id'];
                                         ?>
 
 										<tr>
@@ -51,7 +51,7 @@
 								 
 										<td width="100"><?php echo $row['class_name']; ?></td> 
 
-										<td width="30"><a href="edit_employee.php<?php echo '?id='.$id; ?>" class="btn btn-success"><i class="icon-pencil"></i> </a></td>
+										<td width="30"><a href="edit_student.php<?php echo '?id='.$id; ?>" class="btn btn-success"><i class="icon-pencil"></i> </a></td>
 									 
 										</tr>
                                    <?php } ?>    

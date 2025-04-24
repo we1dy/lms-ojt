@@ -3,7 +3,7 @@ include('admin/dbcon.php');
 include('session.php');
 if (isset($_POST['delete_user'])){
 $id=$_POST['selector'];
-$class_id = $_POST['admin_class_id'];
+$class_id = $_POST['teacher_class_id'];
  $get_id=$_POST['get_id']; 
 $N = count($id);
 for($i=0; $i < $N; $i++)
@@ -45,14 +45,14 @@ for($i=0; $i < $N; $i++)
 	$fdesc = $row['fdesc'];
 
 	
-	mysqli_query($conn,"insert into admin_backpack (floc,fdatein,fdesc,admin_id,fname) value('$floc',NOW(),'$fdesc','$session_id','$fname')")or die(mysqli_error());
+	mysqli_query($conn,"insert into teacher_backpack (floc,fdatein,fdesc,teacher_id,fname) value('$floc',NOW(),'$fdesc','$session_id','$fname')")or die(mysqli_error());
 	
 	
 	}
 }
 ?>
 <script>
-window.location = 'admin_backack.php';
+window.location = 'teacher_backack.php';
 </script>
 <?php
 }
@@ -61,8 +61,8 @@ window.location = 'admin_backack.php';
 
 if (isset($_POST['share'])){
 $id=$_POST['selector'];
-$admin_id = $_POST['admin_id1'];
-echo $admin_id ; 
+$teacher_id = $_POST['teacher_id1'];
+echo $teacher_id ; 
 $N = count($id);
 for($i=0; $i < $N; $i++)
 {
@@ -75,14 +75,14 @@ for($i=0; $i < $N; $i++)
 	$fdesc = $row['fdesc'];
 
 	
-	mysqli_query($conn,"insert into admin_shared (floc,fdatein,fdesc,admin_id,fname,shared_admin_id) value('$floc',NOW(),'$fdesc','$session_id','$fname','$admin_id')")or die(mysqli_error());
+	mysqli_query($conn,"insert into teacher_shared (floc,fdatein,fdesc,teacher_id,fname,shared_teacher_id) value('$floc',NOW(),'$fdesc','$session_id','$fname','$teacher_id')")or die(mysqli_error());
 	
 	
 	}
 }
 ?>
 <script>
- window.location = 'admin_share.php';
+ window.location = 'teacher_share.php';
 </script>
 <?php
 }

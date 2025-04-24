@@ -33,7 +33,7 @@
 # for time zones in Brazil, but this was incorrect, as Brazilians say
 # "summer time".  Reinaldo Goulart, a Sao Paulo businessman active in
 # the railroad sector, writes (1999-07-06):
-#	The course of time zones is currently a matter of discussion/debate in
+#	The subject of time zones is currently a matter of discussion/debate in
 #	Brazil.  Let's say that "the Brasilia time" is considered the
 #	"official time" because Brasilia is the capital city.
 #	The other three time zones are called "Brasilia time "minus one" or
@@ -381,19 +381,19 @@ Rule	Arg	2008	only	-	Oct	Sun>=15	0:00	1:00	S
 # <a/>
 # is the official page for the Province Government).
 #
-# There's also a note in only one of the major national papers (La Naciï¿½n) at
+# There's also a note in only one of the major national papers (La Nación) at
 # <a href="http://www.lanacion.com.ar/nota.asp?nota_id=1107912">
 # http://www.lanacion.com.ar/nota.asp?nota_id=1107912
 # </a>
 #
 # The press release says:
-#  (...) anunciï¿½ que el prï¿½ximo domingo a las 00:00 los puntanos deberï¿½n
+#  (...) anunció que el próximo domingo a las 00:00 los puntanos deberán
 # atrasar una hora sus relojes.
 #
-# A partir de entonces, San Luis establecerï¿½ el huso horario propio de
+# A partir de entonces, San Luis establecerá el huso horario propio de
 # la Provincia. De esta manera, durante el periodo del calendario anual
-# 2009, el cambio horario quedarï¿½ comprendido entre las 00:00 del tercer
-# domingo de marzo y las 24:00 del segundo sï¿½bado de octubre.
+# 2009, el cambio horario quedará comprendido entre las 00:00 del tercer
+# domingo de marzo y las 24:00 del segundo sábado de octubre.
 # Quick&dirty translation
 # (...) announced that next Sunday, at 00:00, Puntanos (the San Luis
 # inhabitants) will have to turn back one hour their clocks
@@ -812,7 +812,7 @@ Zone	America/La_Paz	-4:32:36 -	LMT	1890
 
 # From Guilherme Bernardes Rodrigues (2011-10-07):
 # There is news in the media, however there is still no decree about it.
-# I just send a e-mail to Zulmira Brandï¿½o at
+# I just send a e-mail to Zulmira Brandão at
 # <a href="http://pcdsh01.on.br/">http://pcdsh01.on.br/</a> the
 # oficial agency about time in Brazil, and she confirmed that the old rule is
 # still in force.
@@ -1187,7 +1187,7 @@ Zone America/Rio_Branco	-4:31:12 -	LMT	1914
 # </a>.
 
 # From Angel Chiang (2010-03-04):
-# course: DST in Chile exceptionally extended to 3 April due to earthquake
+# Subject: DST in Chile exceptionally extended to 3 April due to earthquake
 # <a href="http://www.gobiernodechile.cl/viewNoticia.aspx?idArticulo=30098">
 # http://www.gobiernodechile.cl/viewNoticia.aspx?idArticulo=30098
 # </a>

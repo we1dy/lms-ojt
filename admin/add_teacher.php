@@ -2,7 +2,7 @@
                         <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Add admin</div>
+                                <div class="muted pull-left">Add Teacher</div>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
@@ -68,7 +68,7 @@
                                 $department_id = $_POST['department'];
 								
 								
-								$query = mysqli_query($conn,"select * from admin where firstname = '$firstname' and lastname = '$lastname' ")or die(mysqli_error());
+								$query = mysqli_query($conn,"select * from teacher where firstname = '$firstname' and lastname = '$lastname' ")or die(mysqli_error());
 								$count = mysqli_num_rows($query);
 								
 								if ($count > 0){ ?>
@@ -78,11 +78,11 @@
 								<?php
 								}else{
 
-                                mysqli_query($conn,"insert into admin (firstname,lastname,location,department_id)
+                                mysqli_query($conn,"insert into teacher (firstname,lastname,location,department_id)
 								values ('$firstname','$lastname','uploads/NO-IMAGE-AVAILABLE.jpg','$department_id')         
 								") or die(mysqli_error()); ?>
 								<script>
-							 	window.location = "admins.php"; 
+							 	window.location = "teachers.php"; 
 								</script>
 								<?php   }} ?>
 						 

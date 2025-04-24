@@ -2,10 +2,10 @@
 <?php include('session.php'); ?>
 <?php $get_id = $_GET['id']; ?>
 <body>
-		<?php include('navbar_admin.php'); ?>
+		<?php include('navbar_teacher.php'); ?>
         <div class="container-fluid">
             <div class="row-fluid">
-				<?php include('quiz_sidebar_admin.php'); ?>
+				<?php include('quiz_sidebar_teacher.php'); ?>
                 <div class="span9" id="content">
                      <div class="row-fluid">
 					    <!-- breadcrumb -->	
@@ -28,7 +28,7 @@
                             <div class="block-content collapse in">
                                 <div class="span12">
 									<div class="pull-right">
-									<a href="admin_quiz.php" class="btn btn-success"><i class="icon-arrow-left"></i> Back</a>
+									<a href="teacher_quiz.php" class="btn btn-success"><i class="icon-arrow-left"></i> Back</a>
 									<a href="add_question.php<?php echo '?id='.$get_id; ?>" class="btn btn-info"><i class="icon-plus-sign"></i> Add Question</a>
 									</div>
 									<form action="delete_quiz_question.php" method="post">

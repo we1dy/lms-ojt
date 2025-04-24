@@ -6,7 +6,7 @@
 	  if($post_id == ''){
 	  ?>
 		<script>
-		window.location = "assignment_employee.php<?php echo '?id='.$get_id; ?>";
+		window.location = "assignment_student.php<?php echo '?id='.$get_id; ?>";
 		</script>
 	  <?php
 	  }
@@ -14,8 +14,8 @@
  ?>
  
 
-    <body id="employeeTableDiv">
-		<?php include('navbar_admin.php'); ?>
+    <body id="studentTableDiv">
+		<?php include('navbar_teacher.php'); ?>
         <div class="container-fluid">
             <div class="row-fluid">
 				<?php include('assignment_link.php'); ?>
@@ -24,16 +24,16 @@
 					   
 					   <!-- breadcrumb -->
 				
-										<?php $class_query = mysqli_query($conn,"select * from admin_class
-										LEFT JOIN class ON class.class_id = admin_class.class_id
-										LEFT JOIN course ON course.course_id = admin_class.course_id
-										where admin_class_id = '$get_id'")or die(mysqli_error());
+										<?php $class_query = mysqli_query($conn,"select * from teacher_class
+										LEFT JOIN class ON class.class_id = teacher_class.class_id
+										LEFT JOIN subject ON subject.subject_id = teacher_class.subject_id
+										where teacher_class_id = '$get_id'")or die(mysqli_error());
 										$class_row = mysqli_fetch_array($class_query);
 										?>
 				
 					     <ul class="breadcrumb">
 							<li><a href="#"><?php echo $class_row['class_name']; ?></a> <span class="divider">/</span></li>
-							<li><a href="#"><?php echo $class_row['course_code']; ?></a> <span class="divider">/</span></li>
+							<li><a href="#"><?php echo $class_row['subject_code']; ?></a> <span class="divider">/</span></li>
 							<li><a href="#">School Year: <?php echo $class_row['school_year']; ?></a> <span class="divider">/</span></li>
 							<li><a href="#"><b>Uploaded Assignments</b></a></li>
 						</ul>
@@ -73,11 +73,11 @@
 										<tbody>
 											
                               		<?php
-										$query = mysqli_query($conn,"select * FROM employee_assignment 
-										LEFT JOIN employee on employee.employee_id  = employee_assignment.employee_id
+										$query = mysqli_query($conn,"select * FROM student_assignment 
+										LEFT JOIN student on student.student_id  = student_assignment.student_id
 										where assignment_id = '$post_id'  order by assignment_fdatein DESC")or die(mysqli_error());
 										while($row = mysqli_fetch_array($query)){
-										$id  = $row['employee_assignment_id'];
+										$id  = $row['student_assignment_id'];
 									?>                              
 										<tr>
 										 <td><?php echo $row['assignment_fdatein']; ?></td>

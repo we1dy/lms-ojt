@@ -1,10 +1,10 @@
 <?php include('header_dashboard.php'); ?>
 <?php include('session.php'); ?>
     <body>
-		<?php include('navbar_admin.php'); ?>
+		<?php include('navbar_teacher.php'); ?>
         <div class="container-fluid">
             <div class="row-fluid">
-				<?php include('admin_sidebar.php'); ?>
+				<?php include('teacher_sidebar.php'); ?>
                 <div class="span6" id="content">
                      <div class="row-fluid">
 					    <!-- breadcrumb -->
@@ -32,16 +32,16 @@
                                 <div class="span12">
 								
   										<ul	 id="da-thumbs" class="da-thumbs">
-										<?php $query = mysqli_query($conn,"select * from admin_class
-										LEFT JOIN class ON class.class_id = admin_class.class_id
-										LEFT JOIN course ON course.course_id = admin_class.course_id
-										where admin_id = '$session_id' and school_year = '$school_year' ")or die(mysqli_error());
+										<?php $query = mysqli_query($conn,"select * from teacher_class
+										LEFT JOIN class ON class.class_id = teacher_class.class_id
+										LEFT JOIN subject ON subject.subject_id = teacher_class.subject_id
+										where teacher_id = '$session_id' and school_year = '$school_year' ")or die(mysqli_error());
 										while($row = mysqli_fetch_array($query)){
-										$id = $row['admin_class_id'];
+										$id = $row['teacher_class_id'];
 				
 										?>
 											<li>
-												<a href="my_employees.php<?php echo '?id='.$id; ?>">
+												<a href="my_students.php<?php echo '?id='.$id; ?>">
 														<img src ="<?php echo $row['thumbnails'] ?>" width="124" height="140" class="img-polaroid">
 													<div>
 													<span>
@@ -51,7 +51,7 @@
 													</div>
 												</a>
 												<p class="class"><?php echo $row['class_name']; ?></p>
-												<p class="course"><?php echo $row['course_code']; ?></p>
+												<p class="subject"><?php echo $row['subject_code']; ?></p>
 												<a  href="#<?php echo $id; ?>" data-toggle="modal"><i class="icon-trash"></i> Remove</a>	
 											
 											</li>
@@ -69,7 +69,7 @@
 
 
                 </div>
-				<?php include('admin_right_sidebar.php') ?>
+				<?php include('teacher_right_sidebar.php') ?>
             </div>
 		<?php include('footer.php'); ?>
         </div>

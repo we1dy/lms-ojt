@@ -360,7 +360,7 @@ Rule	PRC	1987	1991	-	Apr	Sun>=10	0:00	1:00	D
 # observing daylight saving time in 1986.
 #
 # From Thomas S. Mullaney (2008-02-11):
-# I think you're combining two courses that need to treated
+# I think you're combining two subjects that need to treated
 # separately: daylight savings (which, you're correct, wasn't
 # implemented until the 1980s) and the unified time zone centered near
 # Beijing (which was implemented in 1949). Briefly, there was also a

@@ -1,10 +1,10 @@
 <?php include('header_dashboard.php'); ?>
 <?php include('session.php'); ?>
     <body id="class_div">
-		<?php include('navbar_admin.php'); ?>
+		<?php include('navbar_teacher.php'); ?>
         <div class="container-fluid">
             <div class="row-fluid">
-				<?php include('sidebar/admin_add_assignment_sidebar.php'); ?>
+				<?php include('sidebar/teacher_add_assignment_sidebar.php'); ?>
                 <div class="span9" id="content">
                      <div class="row-fluid">
 					    <!-- breadcrumb -->	
@@ -91,21 +91,21 @@
 										        <tr>
 												<th></th>
 												<th>Class Name</th>
-												<th>course Code</th>
+												<th>Subject Code</th>
 												</tr>
 												
 										</thead>
 										<tbody>
 											
-                              	<?php $query = mysqli_query($conn,"select * from admin_class
-										LEFT JOIN class ON class.class_id = admin_class.class_id
-										LEFT JOIN course ON course.course_id = admin_class.course_id
-										where admin_id = '$session_id' and school_year = '$school_year' ")or die(mysqli_error());
+                              	<?php $query = mysqli_query($conn,"select * from teacher_class
+										LEFT JOIN class ON class.class_id = teacher_class.class_id
+										LEFT JOIN subject ON subject.subject_id = teacher_class.subject_id
+										where teacher_id = '$session_id' and school_year = '$school_year' ")or die(mysqli_error());
 										$count = mysqli_num_rows($query);
 										
 									
 										while($row = mysqli_fetch_array($query)){
-										$id = $row['admin_class_id'];
+										$id = $row['teacher_class_id'];
 				
 										?>                             
 										<tr id="del<?php echo $id; ?>">
@@ -113,7 +113,7 @@
 												<input id="" class="" name="selector[]" type="checkbox" value="<?php echo $id; ?>">
 											</td>
 											<td><?php echo $row['class_name']; ?></td>
-											<td><?php echo $row['course_code']; ?></td>                                                                   
+											<td><?php echo $row['subject_code']; ?></td>                                                                   
 										</tr>
                          
 						<?php } ?>
@@ -144,7 +144,7 @@
 			
 
                 </div>
-							<?php/*  include('admin_right_sidebar.php')  */?>
+							<?php/*  include('teacher_right_sidebar.php')  */?>
 	
             </div>
 		<?php include('footer.php'); ?>

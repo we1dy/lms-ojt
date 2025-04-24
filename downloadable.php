@@ -2,24 +2,24 @@
 <?php include('session.php'); ?>
 <?php $get_id = $_GET['id']; ?>
     <body>
-		<?php include('navbar_admin.php'); ?>
+		<?php include('navbar_teacher.php'); ?>
         <div class="container-fluid">
             <div class="row-fluid">
 				<?php include('downloadable_link.php'); ?>
                 <div class="span6" id="content">
                      <div class="row-fluid">
 					    <!-- breadcrumb -->
-										<?php $class_query = mysqli_query($conn,"select * from admin_class
-										LEFT JOIN class ON class.class_id = admin_class.class_id
-										LEFT JOIN course ON course.course_id = admin_class.course_id
-										where admin_class_id = '$get_id'")or die(mysqli_error());
+										<?php $class_query = mysqli_query($conn,"select * from teacher_class
+										LEFT JOIN class ON class.class_id = teacher_class.class_id
+										LEFT JOIN subject ON subject.subject_id = teacher_class.subject_id
+										where teacher_class_id = '$get_id'")or die(mysqli_error());
 										$class_row = mysqli_fetch_array($class_query);
 										$class_id = $class_row['class_id'];
 										$school_year = $class_row['school_year'];
 										?>
 					     <ul class="breadcrumb">
 							<li><a href="#"><?php echo $class_row['class_name']; ?></a> <span class="divider">/</span></li>
-							<li><a href="#"><?php echo $class_row['course_code']; ?></a> <span class="divider">/</span></li>
+							<li><a href="#"><?php echo $class_row['subject_code']; ?></a> <span class="divider">/</span></li>
 							<li><a href="#">School Year: <?php echo $class_row['school_year']; ?></a> <span class="divider">/</span></li>
 							<li><a href="#"><b>Downloadable Materials</b></a></li>
 						</ul>

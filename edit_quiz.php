@@ -2,10 +2,10 @@
 <?php include('session.php'); ?>
 <?php $get_id = $_GET['id']; ?>
 <body>
-		<?php include('navbar_admin.php'); ?>
+		<?php include('navbar_teacher.php'); ?>
         <div class="container-fluid">
             <div class="row-fluid">
-				<?php include('quiz_sidebar_admin.php'); ?>
+				<?php include('quiz_sidebar_teacher.php'); ?>
                 <div class="span9" id="content">
                      <div class="row-fluid">
 					    <!-- breadcrumb -->	
@@ -28,7 +28,7 @@
                             <div class="block-content collapse in">
                                 <div class="span12">
 									<div class="pull-right">
-									<a href="admin_quiz.php" class="btn btn-info"><i class="icon-arrow-left"></i> Back</a>
+									<a href="teacher_quiz.php" class="btn btn-info"><i class="icon-arrow-left"></i> Back</a>
 									</div>
 								<?php
 								$query = mysqli_query($conn,"select * from quiz where quiz_id = '$get_id'")or die(mysqli_error());
@@ -63,7 +63,7 @@
 										mysqli_query($conn,"update quiz set quiz_title = '$quiz_title',quiz_description = '$description' where quiz_id = '$quiz_id'")or die(mysqli_error());
 										?>
 										<script>
-										window.location = 'admin_quiz.php';
+										window.location = 'teacher_quiz.php';
 										</script>
 										<?php
 										}

@@ -4,7 +4,7 @@
 		<?php include('navbar.php'); ?>
         <div class="container-fluid">
             <div class="row-fluid">
-				<?php include('course_sidebar.php'); ?>
+				<?php include('subject_sidebar.php'); ?>
 		
 						<div class="span9" id="content">
 		                    <div class="row-fluid">
@@ -12,21 +12,21 @@
 		                        <!-- block -->
 		                        <div class="block">
 		                            <div class="navbar navbar-inner block-header">
-		                                <div class="muted pull-left">Add course</div>
+		                                <div class="muted pull-left">Add Subject</div>
 		                            </div>
 		                            <div class="block-content collapse in">
-									<a href="courses.php"><i class="icon-arrow-left"></i> Back</a>
+									<a href="subjects.php"><i class="icon-arrow-left"></i> Back</a>
 									    <form class="form-horizontal" method="post">
 										<div class="control-group">
-											<label class="control-label" for="inputEmail">course Code</label>
+											<label class="control-label" for="inputEmail">Subject Code</label>
 											<div class="controls">
-											<input type="text" name="course_code" id="inputEmail" placeholder="course Code">
+											<input type="text" name="subject_code" id="inputEmail" placeholder="Subject Code">
 											</div>
 										</div>
 										<div class="control-group">
-											<label class="control-label" for="inputPassword">course Title</label>
+											<label class="control-label" for="inputPassword">Subject Title</label>
 											<div class="controls">
-											<input type="text" class="span8" name="title" id="inputPassword" placeholder="course Title" required>
+											<input type="text" class="span8" name="title" id="inputPassword" placeholder="Subject Title" required>
 											</div>
 										</div>
 										<div class="control-group">
@@ -65,14 +65,14 @@
 										
 										<?php
 										if (isset($_POST['save'])){
-										$course_code = $_POST['course_code'];
+										$subject_code = $_POST['subject_code'];
 										$title = $_POST['title'];
 										$unit = $_POST['unit'];
 										$description = $_POST['description'];
 										$semester = $_POST['semester'];
 										
 										
-										$query = mysqli_query($conn,"select * from course where course_code = '$course_code' ")or die(mysqli_error());
+										$query = mysqli_query($conn,"select * from subject where subject_code = '$subject_code' ")or die(mysqli_error());
 										$count = mysqli_num_rows($query);
 
 										if ($count > 0){ ?>
@@ -81,15 +81,15 @@
 										</script>
 										<?php
 										}else{
-										mysqli_query($conn,"insert into course (course_code,course_title,description,unit,semester) values('$course_code','$title','$description','$unit','$semester')")or die(mysqli_error());
+										mysqli_query($conn,"insert into subject (subject_code,subject_title,description,unit,semester) values('$subject_code','$title','$description','$unit','$semester')")or die(mysqli_error());
 										
 										
-										mysqli_query($conn,"insert into activity_log (date,username,action) values(NOW(),'$user_username','Add course $course_code')")or die(mysqli_error());
+										mysqli_query($conn,"insert into activity_log (date,username,action) values(NOW(),'$user_username','Add Subject $subject_code')")or die(mysqli_error());
 										
 										
 										?>
 										<script>
-										window.location = "courses.php";
+										window.location = "subjects.php";
 										</script>
 										<?php
 										}

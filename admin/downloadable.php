@@ -30,9 +30,9 @@
 										<tbody>
 											
                               		<?php
-										$query = mysqli_query($conn,"select * FROM files LEFT JOIN admin ON admin.admin_id = files.admin_id 
-																				  LEFT JOIN admin_class ON admin_class.admin_class_id = files.class_id 
-																				  INNER JOIN class ON class.class_id = admin_class.class_id  ")or die(mysqli_error());
+										$query = mysqli_query($conn,"select * FROM files LEFT JOIN teacher ON teacher.teacher_id = files.teacher_id 
+																				  LEFT JOIN teacher_class ON teacher_class.teacher_class_id = files.class_id 
+																				  INNER JOIN class ON class.class_id = teacher_class.class_id  ")or die(mysqli_error());
 										while($row = mysqli_fetch_array($query)){
 									?>
 										<tr>

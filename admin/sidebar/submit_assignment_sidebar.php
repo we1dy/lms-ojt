@@ -54,7 +54,7 @@
 						url: "upload_assignment.php",
 						data: formData,
 						success: function(html){
-							$.jGrowl("employee Successfully  Added", { header: 'employee Added' });
+							$.jGrowl("Student Successfully  Added", { header: 'Student Added' });
 							window.location = 'submit_assignment.php<?php echo '?id='.$get_id.'&'.'post_id='.$post_id; ?>';
 						},
 						cache: false,

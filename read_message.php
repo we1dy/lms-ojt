@@ -8,7 +8,7 @@ for($i=0; $i < $N; $i++)
 {
 	$result = mysqli_query($conn,"update message set message_status = 'read' where message_id='$id[$i]'");
 }
-header("location: employee_message.php");
+header("location: student_message.php");
 }
 ?>
 
@@ -24,7 +24,7 @@ mysqli_query($conn,"insert into message_sent (reciever_id,content,date_sended,se
 ?>
 <script>
 alert('Message Sent');
-window.location ="employee_message.php";
+window.location ="student_message.php";
 </script>
 <?php
 

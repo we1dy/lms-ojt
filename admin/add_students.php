@@ -2,11 +2,11 @@
                         <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Add employee</div>
+                                <div class="muted pull-left">Add Student</div>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-								<form id="add_employee" method="post">
+								<form id="add_student" method="post">
 								
 								        <div class="control-group">
                                    
@@ -58,18 +58,18 @@
 					
 			<script>
 			jQuery(document).ready(function($){
-				$("#add_employee").submit(function(e){
+				$("#add_student").submit(function(e){
 					e.preventDefault();
 					var _this = $(e.target);
 					var formData = $(this).serialize();
 					$.ajax({
 						type: "POST",
-						url: "save_employee.php",
+						url: "save_student.php",
 						data: formData,
 						success: function(html){
-							$.jGrowl("employee Successfully  Added", { header: 'employee Added' });
-							$('#employeeTableDiv').load('employee_table.php', function(response){
-								$("#employeeTableDiv").html(response);
+							$.jGrowl("Student Successfully  Added", { header: 'Student Added' });
+							$('#studentTableDiv').load('student_table.php', function(response){
+								$("#studentTableDiv").html(response);
 								$('#example').dataTable( {
 									"sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
 									"sPaginationType": "bootstrap",

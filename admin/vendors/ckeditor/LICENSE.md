@@ -237,7 +237,7 @@ the Program or works based on it.
 
   6. Each time you redistribute the Program (or any work based on the
 Program), the recipient automatically receives a license from the
-original licensor to copy, distribute or modify the Program course to
+original licensor to copy, distribute or modify the Program subject to
 these terms and conditions.  You may not impose any further
 restrictions on the recipients' exercise of the rights granted herein.
 You are not responsible for enforcing compliance by third parties to
@@ -700,7 +700,7 @@ the Library or works based on it.
   10. Each time you redistribute the Library (or any work based on the
 Library), the recipient automatically receives a license from the
 original licensor to copy, distribute, link with or modify the Library
-course to these terms and conditions.  You may not impose any further
+subject to these terms and conditions.  You may not impose any further
 restrictions on the recipients' exercise of the rights granted herein.
 You are not responsible for enforcing compliance by third parties with
 this License.
@@ -878,7 +878,7 @@ Version 1.1
 
      2.1. The Initial Developer Grant.
      The Initial Developer hereby grants You a world-wide, royalty-free,
-     non-exclusive license, course to third party intellectual property
+     non-exclusive license, subject to third party intellectual property
      claims:
           (a)  under intellectual property rights (other than patent or
           trademark) Licensable by Initial Developer to use, reproduce,
@@ -902,7 +902,7 @@ Version 1.1
           combination of the Original Code with other software or devices.
 
      2.2. Contributor Grant.
-     course to third party intellectual property claims, each Contributor
+     Subject to third party intellectual property claims, each Contributor
      hereby grants You a world-wide, royalty-free, non-exclusive license
 
           (a)  under intellectual property rights (other than patent or
@@ -1191,7 +1191,7 @@ Version 1.1
 
 11. MISCELLANEOUS.
 
-     This License represents the complete agreement concerning course
+     This License represents the complete agreement concerning subject
      matter hereof. If any provision of this License is held to be
      unenforceable, such provision shall be reformed only to the extent
      necessary to make it enforceable. This License shall be governed by
@@ -1200,7 +1200,7 @@ Version 1.1
      With respect to disputes in which at least one party is a citizen of,
      or an entity chartered or registered to do business in the United
      States of America, any litigation relating to this License shall be
-     course to the jurisdiction of the Federal Courts of the Northern
+     subject to the jurisdiction of the Federal Courts of the Northern
      District of California, with venue lying in Santa Clara County,
      California, with the losing party responsible for costs, including
      without limitation, court costs and reasonable attorneys' fees and
@@ -1229,7 +1229,7 @@ Version 1.1
 
 EXHIBIT A -Mozilla Public License.
 
-     ``The contents of this file are course to the Mozilla Public License
+     ``The contents of this file are subject to the Mozilla Public License
      Version 1.1 (the "License"); you may not use this file except in
      compliance with the License. You may obtain a copy of the License at
      http://www.mozilla.org/MPL/

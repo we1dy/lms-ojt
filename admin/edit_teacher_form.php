@@ -1,9 +1,9 @@
    <div class="row-fluid">
-       <a href="admins.php" class="btn btn-info"><i class="icon-plus-sign icon-large"></i> Add admin</a>
+       <a href="teachers.php" class="btn btn-info"><i class="icon-plus-sign icon-large"></i> Add Teacher</a>
                         <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Edit admin</div>
+                                <div class="muted pull-left">Edit Teacher</div>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
@@ -17,7 +17,7 @@
                                         </div>
 									-->	
 									<?php
-									$query = mysqli_query($conn,"select * from admin where admin_id = '$get_id' ")or die(mysqli_error());
+									$query = mysqli_query($conn,"select * from teacher where teacher_id = '$get_id' ")or die(mysqli_error());
 									$row = mysqli_fetch_array($query);
 									?>
 										
@@ -26,13 +26,13 @@
                                           <div class="controls">
                                             <select name="department"  class="chzn-select"required>
 											<?php
-											$query_admin = mysqli_query($conn,"select * from admin join  department")or die(mysqli_error());
-											$row_admin = mysqli_fetch_array($query_admin);
+											$query_teacher = mysqli_query($conn,"select * from teacher join  department")or die(mysqli_error());
+											$row_teacher = mysqli_fetch_array($query_teacher);
 											
 											?>
 											
-                                             	<option value="<?php echo $row_admin['department_id']; ?>">
-												<?php echo $row_admin['department_name']; ?>
+                                             	<option value="<?php echo $row_teacher['department_id']; ?>">
+												<?php echo $row_teacher['department_name']; ?>
 												</option>
 											<?php
 											$department = mysqli_query($conn,"select * from department order by department_name");
@@ -81,7 +81,7 @@
                                 $department_id = $_POST['department'];
 								
 								
-								$query = mysqli_query($conn,"select * from admin where firstname = '$firstname' and lastname = '$lastname' ")or die(mysqli_error());
+								$query = mysqli_query($conn,"select * from teacher where firstname = '$firstname' and lastname = '$lastname' ")or die(mysqli_error());
 								$count = mysqli_num_rows($query);
 								
 								if ($count > 1){ ?>
@@ -91,11 +91,11 @@
 								<?php
 								}else{
 								
-								mysqli_query($conn,"update admin set firstname = '$firstname' , lastname = '$lastname' , department_id = '$department_id' where admin_id = '$get_id' ")or die(mysqli_error());	
+								mysqli_query($conn,"update teacher set firstname = '$firstname' , lastname = '$lastname' , department_id = '$department_id' where teacher_id = '$get_id' ")or die(mysqli_error());	
 								
 								?>
 								<script>
-							 	window.location = "admins.php"; 
+							 	window.location = "teachers.php"; 
 								</script>
 								<?php   }} ?>
 						 
