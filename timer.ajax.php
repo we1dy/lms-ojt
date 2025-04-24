@@ -2,14 +2,14 @@
 include('dbcon.php');
 include('session.php');
 
-$sql = mysqli_query($conn,"SELECT * FROM student_class_quiz WHERE student_id = '$session_id'")or die(mysqli_error());
+$sql = mysqli_query($conn,"SELECT * FROM employee_class_quiz WHERE employee_id = '$session_id'")or die(mysqli_error());
 $row = mysqli_fetch_array($sql);
-$quiz_time = $row['student_quiz_time'];
+$quiz_time = $row['employee_quiz_time'];
 
 $sqlp = mysqli_query($conn,"SELECT * FROM class_quiz")or die(mysqli_error());
 $rowp = mysqli_fetch_array($sqlp);
 if($quiz_time <= $rowp['quiz_time'] AND $quiz_time > 0){
-	 mysqli_query($conn,"UPDATE student_class_quiz SET student_quiz_time = ".$row['student_quiz_time']." - 1 WHERE student_id = '$session_id'")or die(mysqli_error()); 
+	 mysqli_query($conn,"UPDATE employee_class_quiz SET employee_quiz_time = ".$row['employee_quiz_time']." - 1 WHERE employee_id = '$session_id'")or die(mysqli_error()); 
 	/* $_SESSION['take_exam'] = 'continue'; */
 
 	$init = $quiz_time;

@@ -1,13 +1,13 @@
    <div class="row-fluid">
-       <a href="students.php" class="btn btn-info"><i class="icon-plus-sign icon-large"></i> Add Student</a>
+       <a href="employees.php" class="btn btn-info"><i class="icon-plus-sign icon-large"></i> Add employee</a>
                         <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Add Student</div>
+                                <div class="muted pull-left">Add employee</div>
                             </div>
                             <div class="block-content collapse in">
 							<?php
-							$query = mysqli_query($conn,"select * from student LEFT JOIN class ON class.class_id = student.class_id where student_id = '$get_id'")or die(mysqli_error());
+							$query = mysqli_query($conn,"select * from employee LEFT JOIN class ON class.class_id = employee.class_id where employee_id = '$get_id'")or die(mysqli_error());
 							$row = mysqli_fetch_array($query);
 							?>
                                 <div class="span12">
@@ -72,12 +72,12 @@
                                 $cys = $_POST['cys'];
                       
 
-								mysqli_query($conn,"update student set username = '$un' , firstname ='$fn' , lastname = '$ln' , class_id = '$cys' where student_id = '$get_id' ")or die(mysqli_error());
+								mysqli_query($conn,"update employee set username = '$un' , firstname ='$fn' , lastname = '$ln' , class_id = '$cys' where employee_id = '$get_id' ")or die(mysqli_error());
 
 								?>
  
 								<script>
-								window.location = "students.php"; 
+								window.location = "employees.php"; 
 								</script>
 
                        <?php     }  ?>

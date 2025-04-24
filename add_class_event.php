@@ -1,4 +1,4 @@
- <form id="signin_student" class="form-signin" method="post">
+ <form id="signin_employee" class="form-signin" method="post">
 	<h4 class="form-signin-heading"><i class="icon-plus-sign"></i> Add Event</h4>
 	    <input type="text" class="input-block-level datepicker" name="date_start" id="date01" placeholder="Date Start" required/>
 	    <input type="text" class="input-block-level datepicker" name="date_end" id="date01" placeholder="Date End" required/>
@@ -11,7 +11,7 @@ if (isset($_POST['add'])){
 	$date_end = $_POST['date_end'];
 	$title = $_POST['title'];
 	
-	$query = mysqli_query($conn,"insert into event (date_end,date_start,event_title,teacher_class_id) values('$date_end','$date_start','$title','$get_id')")or die(mysqli_error());
+	$query = mysqli_query($conn,"insert into event (date_end,date_start,event_title,admin_class_id) values('$date_end','$date_start','$title','$get_id')")or die(mysqli_error());
 	?>
 	<script>
 	window.location = "class_calendar.php<?php echo '?id='.$get_id; ?>";
@@ -35,7 +35,7 @@ if (isset($_POST['add'])){
 										<tbody>
 											
                              
-									<?php $event_query = mysqli_query($conn,"select * from event where teacher_class_id = '$get_id' ")or die(mysqli_error());
+									<?php $event_query = mysqli_query($conn,"select * from event where admin_class_id = '$get_id' ")or die(mysqli_error());
 										while($event_row = mysqli_fetch_array($event_query)){
 										$id  = $event_row['event_id'];
 									?>                              

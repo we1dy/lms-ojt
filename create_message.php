@@ -10,9 +10,9 @@
                                 <div class="span12">
 									<ul class="nav nav-tabs">
 										<li class="active">
-											<a href="teacher_message.php">For Teacher</a>
+											<a href="admin_message.php">For admin</a>
 										</li>
-										<li><a href="teacher_message_teacher.php">For Student</a></li>
+										<li><a href="admin_message_admin.php">For employee</a></li>
 									</ul>
 									
 								
@@ -22,15 +22,15 @@
 									<div class="control-group">
 											<label>To:</label>
                                           <div class="controls">
-                                            <select name="teacher_id"  class="chzn-select" required>
+                                            <select name="admin_id"  class="chzn-select" required>
                                              	<option></option>
 											<?php
-											$query = mysqli_query($conn,"select * from teacher order by firstname");
+											$query = mysqli_query($conn,"select * from admin order by firstname");
 											while($row = mysqli_fetch_array($query)){
 											
 											?>
 											
-											<option value="<?php echo $row['teacher_id']; ?>"><?php echo $row['firstname']; ?> <?php echo $row['lastname']; ?> </option>
+											<option value="<?php echo $row['admin_id']; ?>"><?php echo $row['firstname']; ?> <?php echo $row['lastname']; ?> </option>
 											
 											<?php } ?>
                                             </select>
@@ -70,7 +70,7 @@
 						
 						$.jGrowl("Message Successfully Sended", { header: 'Message Sent' });
 						var delay = 2000;
-							setTimeout(function(){ window.location = 'teacher_message.php'  }, delay);  
+							setTimeout(function(){ window.location = 'admin_message.php'  }, delay);  
 						
 						
 						}

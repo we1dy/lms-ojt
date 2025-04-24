@@ -7,6 +7,6 @@ for($i=0; $i < $N; $i++)
 {
 	$result = mysqli_query($conn,"DELETE FROM quiz where quiz_id='$id[$i]'");
 }
-header("location: teacher_quiz.php");
+header("location: admin_quiz.php");
 }
 ?>

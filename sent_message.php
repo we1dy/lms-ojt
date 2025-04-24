@@ -1,10 +1,10 @@
 <?php include('header_dashboard.php'); ?>
 <?php include('session.php'); ?>
     <body>
-		<?php include('navbar_teacher.php'); ?>
+		<?php include('navbar_admin.php'); ?>
         <div class="container-fluid">
             <div class="row-fluid">
-				<?php include('teacher_message_sidebar.php'); ?>
+				<?php include('admin_message_sidebar.php'); ?>
                 <div class="span6" id="content">
                      <div class="row-fluid">
 					    <!-- breadcrumb -->	
@@ -30,7 +30,7 @@
   								
 										<ul class="nav nav-pills">
 										<li class="">
-										<a href="teacher_message.php"><i class="icon-envelope-alt"></i>inbox</a>
+										<a href="admin_message.php"><i class="icon-envelope-alt"></i>inbox</a>
 										</li>
 										<li class="active">
 										<a href="sent_message.php"><i class="icon-envelope-alt"></i>Sent messages</a>
@@ -39,7 +39,7 @@
 									
 								<?php
 								 $query_announcement = mysqli_query($conn,"select * from message_sent
-																	LEFT JOIN teacher ON teacher.teacher_id = message_sent.reciever_id
+																	LEFT JOIN admin ON admin.admin_id = message_sent.reciever_id
 																	where  sender_id = '$session_id'  order by date_sended DESC
 																	")or die(mysqli_error());					
 								 $count_my_message = mysqli_num_rows($query_announcement);

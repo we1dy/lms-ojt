@@ -1,17 +1,17 @@
 	<?php include('dbcon.php'); ?>
-	<form action="delete_student.php" method="post">
+	<form action="delete_employee.php" method="post">
 	<table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
-	<a data-toggle="modal" href="#student_delete" id="delete"  class="btn btn-danger" name=""><i class="icon-trash icon-large"></i></a>
+	<a data-toggle="modal" href="#employee_delete" id="delete"  class="btn btn-danger" name=""><i class="icon-trash icon-large"></i></a>
 	<div class="pull-right">
 			    <ul class="nav nav-pills">
 				<li class="">
-					<a href="students.php">All</a>
+					<a href="employees.php">All</a>
 				</li>
 				<li class="active">
-					<a href="unreg_students.php">Unregistered</a>
+					<a href="unreg_employees.php">Unregistered</a>
 				</li>
 				<li class="">
-				<a href="reg_students.php">Registered</a>
+				<a href="reg_employees.php">Registered</a>
 				</li>
 				</ul>
 	</div>
@@ -30,9 +30,9 @@
 		<tbody>
 			
 		<?php
-	$query = mysqli_query($conn,"select * from student LEFT JOIN class ON student.class_id = class.class_id where status = 'Unregistered' ORDER BY student.student_id DESC") or die(mysqli_error());
+	$query = mysqli_query($conn,"select * from employee LEFT JOIN class ON employee.class_id = class.class_id where status = 'Unregistered' ORDER BY employee.employee_id DESC") or die(mysqli_error());
 	while ($row = mysqli_fetch_array($query)) {
-		$id = $row['student_id'];
+		$id = $row['employee_id'];
 		?>
 	
 		<tr>
@@ -45,7 +45,7 @@
 	
 		<td width="100"><?php echo $row['class_name']; ?></td> 
 	
-		<td width="30"><a href="edit_student.php<?php echo '?id='.$id; ?>" class="btn btn-success"><i class="icon-pencil"></i> </a></td>
+		<td width="30"><a href="edit_employee.php<?php echo '?id='.$id; ?>" class="btn btn-success"><i class="icon-pencil"></i> </a></td>
 	
 		</tr>
 	<?php } ?>    

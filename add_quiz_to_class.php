@@ -1,10 +1,10 @@
 <?php include('header_dashboard.php'); ?>
 <?php include('session.php'); ?>
 <body>
-		<?php include('navbar_teacher.php'); ?>
+		<?php include('navbar_admin.php'); ?>
         <div class="container-fluid">
             <div class="row-fluid">
-				<?php include('quiz_sidebar_teacher.php'); ?>
+				<?php include('quiz_sidebar_admin.php'); ?>
                 <div class="span9" id="content">
                      <div class="row-fluid">
 					    <!-- breadcrumb -->	
@@ -27,7 +27,7 @@
                             <div class="block-content collapse in">
                                 <div class="span12">
 									<div class="pull-right">
-									<a href="teacher_quiz.php" class="btn btn-info"><i class="icon-arrow-left"></i> Back</a>
+									<a href="admin_quiz.php" class="btn btn-info"><i class="icon-arrow-left"></i> Back</a>
 									</div>
 								
 									    <form class="form-horizontal" method="post">
@@ -36,7 +36,7 @@
 											<div class="controls">
 											<select name="quiz_id">
 											<option></option>
-												<?php  $query = mysqli_query($conn,"select * from quiz where teacher_id = '$session_id'")or die(mysqli_error());
+												<?php  $query = mysqli_query($conn,"select * from quiz where admin_id = '$session_id'")or die(mysqli_error());
 												while ($row = mysqli_fetch_array($query)){ $id = $row['quiz_id']; ?>
 												<option value="<?php echo $id; ?>"><?php echo $row['quiz_title']; ?></option>
 												<?php } ?>
@@ -53,19 +53,19 @@
 												<table class="table" id="question">
                 <th></th>
                 <th>Class</th>
-                <th>Subject</th>
+                <th>course</th>
                 <th></th>
 				
 				<tbody>
-					<?php $query = mysqli_query($conn,"select * from teacher_class
-										LEFT JOIN class ON class.class_id = teacher_class.class_id
-										LEFT JOIN subject ON subject.subject_id = teacher_class.subject_id
-										where teacher_id = '$session_id' and school_year = '$school_year' ")or die(mysqli_error());
+					<?php $query = mysqli_query($conn,"select * from admin_class
+										LEFT JOIN class ON class.class_id = admin_class.class_id
+										LEFT JOIN course ON course.course_id = admin_class.course_id
+										where admin_id = '$session_id' and school_year = '$school_year' ")or die(mysqli_error());
 										$count = mysqli_num_rows($query);
 										
 
 										while($row = mysqli_fetch_array($query)){
-										$id = $row['teacher_class_id'];
+										$id = $row['admin_class_id'];
 				
 										?>
 					<tr>
@@ -73,7 +73,7 @@
 						<input id="optionsCheckbox" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>">
 					</td>
 					<td><?php echo $row['class_name']; ?></td>
-					<td><?php echo $row['subject_code']; ?></td>
+					<td><?php echo $row['course_code']; ?></td>
 					</tr>
 					<?php } ?>
 				</tbody>
@@ -101,11 +101,11 @@
 											$N = count($id);
 											for($i=0; $i < $N; $i++)
 											{
-												mysqli_query($conn,"insert into class_quiz (teacher_class_id,quiz_time,quiz_id) values('$id[$i]','$time','$quiz_id')")or die(mysqli_error());
-												mysqli_query($conn,"insert into notification (teacher_class_id,notification,date_of_notification,link) value('$id[$i]','$name_notification',NOW(),'student_quiz_list.php')")or die(mysqli_error());
+												mysqli_query($conn,"insert into class_quiz (admin_class_id,quiz_time,quiz_id) values('$id[$i]','$time','$quiz_id')")or die(mysqli_error());
+												mysqli_query($conn,"insert into notification (admin_class_id,notification,date_of_notification,link) value('$id[$i]','$name_notification',NOW(),'employee_quiz_list.php')")or die(mysqli_error());
 											} ?>
 											<script>
-												window.location = 'teacher_quiz.php';
+												window.location = 'admin_quiz.php';
 											</script>
 											<?php
 										}

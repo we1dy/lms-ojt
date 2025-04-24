@@ -2,10 +2,10 @@
 <?php include('session.php'); ?>
 <?php $get_id = $_GET['id']; ?>
 <body>
-		<?php include('navbar_teacher.php'); ?>
+		<?php include('navbar_admin.php'); ?>
         <div class="container-fluid">
             <div class="row-fluid">
-				<?php include('quiz_sidebar_teacher.php'); ?>
+				<?php include('quiz_sidebar_admin.php'); ?>
                 <div class="span9" id="content">
                      <div class="row-fluid">
 					    <!-- breadcrumb -->	
