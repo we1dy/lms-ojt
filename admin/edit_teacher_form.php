@@ -17,7 +17,7 @@
                                         </div>
 									-->	
 									<?php
-									$query = mysqli_query($conn,"select * from teacher where teacher_id = '$get_id' ")or die(mysqli_error());
+									$query = mysqli_query($conn,"select * from teacher where admin_id = '$get_id' ")or die(mysqli_error());
 									$row = mysqli_fetch_array($query);
 									?>
 										
@@ -91,7 +91,7 @@
 								<?php
 								}else{
 								
-								mysqli_query($conn,"update teacher set firstname = '$firstname' , lastname = '$lastname' , department_id = '$department_id' where teacher_id = '$get_id' ")or die(mysqli_error());	
+								mysqli_query($conn,"update teacher set firstname = '$firstname' , lastname = '$lastname' , department_id = '$department_id' where admin_id = '$get_id' ")or die(mysqli_error());	
 								
 								?>
 								<script>

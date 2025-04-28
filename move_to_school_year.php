@@ -55,7 +55,7 @@
 										  					<div class="control-group">
 											<label>To:</label>
                                           <div class="controls">
-                                            <select name="teacher_id1"  class="" required>
+                                            <select name="admin_id1"  class="" required>
                                              	<option></option>
 											<?php
 											$query = mysqli_query($conn,"select * from teacher order by firstname");
@@ -63,7 +63,7 @@
 											
 											?>
 											
-											<option value="<?php echo $row['teacher_id']; ?>"><?php echo $row['firstname']; ?> <?php echo $row['lastname']; ?> </option>
+											<option value="<?php echo $row['admin_id']; ?>"><?php echo $row['firstname']; ?> <?php echo $row['lastname']; ?> </option>
 											
 											<?php } ?>
                                             </select>

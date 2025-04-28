@@ -27,7 +27,7 @@
                             <div class="block-content collapse in">
                                 <div class="span12">
 								<?php
-								$query_backpack = mysqli_query($conn,"select * FROM teacher_backpack where teacher_id = '$session_id'  order by fdatein DESC ")or die(mysqli_error());
+								$query_backpack = mysqli_query($conn,"select * FROM teacher_backpack where admin_id = '$session_id'  order by fdatein DESC ")or die(mysqli_error());
 								$num_row = mysqli_num_rows($query_backpack);
 								if ($num_row > 0){
 								?>
@@ -54,7 +54,7 @@
 										</thead>
 										<tbody>
                               		<?php
-										$query = mysqli_query($conn,"select * FROM teacher_backpack where teacher_id = '$session_id'  order by fdatein DESC")or die(mysqli_error());
+										$query = mysqli_query($conn,"select * FROM teacher_backpack where admin_id = '$session_id'  order by fdatein DESC")or die(mysqli_error());
 										while($row = mysqli_fetch_array($query)){
 										$id  = $row['file_id'];
 									?>                              

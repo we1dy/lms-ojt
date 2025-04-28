@@ -53,7 +53,7 @@
 										if (isset($_POST['save'])){
 										$quiz_title = $_POST['quiz_title'];
 										$description = $_POST['description'];
-										mysqli_query($conn,"insert into quiz (quiz_title,quiz_description,date_added,teacher_id) values('$quiz_title','$description',NOW(),'$session_id')")or die(mysqli_error());
+										mysqli_query($conn,"insert into quiz (quiz_title,quiz_description,date_added,admin_id) values('$quiz_title','$description',NOW(),'$session_id')")or die(mysqli_error());
 										?>
 										<script>
 										window.location = 'teacher_quiz.php';

@@ -49,19 +49,19 @@
 											
                               		<?php
 										$query = mysqli_query($conn,"select * FROM student_assignment 
-										LEFT JOIN student on student.student_id  = student_assignment.student_id
+										LEFT JOIN student on student.employee_id  = student_assignment.employee_id
 										RIGHT JOIN assignment on student_assignment.assignment_id  = assignment.assignment_id
-										WHERE student_assignment.student_id = '$session_id'
+										WHERE student_assignment.employee_id = '$session_id'
 										order by fdatein DESC")or die(mysqli_error());
 										while($row = mysqli_fetch_array($query)){
 										$id  = $row['student_assignment_id'];
-										$student_id = $row['student_id'];
+										$employee_id = $row['employee_id'];
 									?>                              
 										<tr>
 										 <td><?php echo $row['fdatein']; ?></td>
                                          <td><?php  echo $row['fname']; ?></td>
                                       
-										 <?php if ($session_id == $student_id){ ?>
+										 <?php if ($session_id == $employee_id){ ?>
                                          <td>
 										 <span class="badge badge-success"><?php echo $row['grade']; ?></span>
 										 </td>
@@ -126,7 +126,7 @@
 										$quiz_id  = $row['quiz_id'];
 										$quiz_time  = $row['quiz_time'];
 									
-										$query1 = mysqli_query($conn,"select * from student_class_quiz where class_quiz_id = '$id' and student_id = '$session_id'")or die(mysqli_error());
+										$query1 = mysqli_query($conn,"select * from student_class_quiz where class_quiz_id = '$id' and employee_id = '$session_id'")or die(mysqli_error());
 										$row1 = mysqli_fetch_array($query1);
 										$grade = $row1['grade'];
 

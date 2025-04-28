@@ -74,7 +74,7 @@
 											
                               		<?php
 										$query = mysqli_query($conn,"select * FROM student_assignment 
-										LEFT JOIN student on student.student_id  = student_assignment.student_id
+										LEFT JOIN student on student.employee_id  = student_assignment.employee_id
 										where assignment_id = '$post_id'  order by assignment_fdatein DESC")or die(mysqli_error());
 										while($row = mysqli_fetch_array($query)){
 										$id  = $row['student_assignment_id'];

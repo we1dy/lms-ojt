@@ -43,7 +43,7 @@
 								<form method="post">
 									 <?php
 								 $query_announcement = mysqli_query($conn,"select * from teacher_class_announcements
-																	where teacher_id = '$session_id' and teacher_class_announcements_id = '$get_id1'  and  teacher_class_id = '$get_id' order by date DESC
+																	where admin_id = '$session_id' and teacher_class_announcements_id = '$get_id1'  and  teacher_class_id = '$get_id' order by date DESC
 																	")or die(mysqli_error());
 								$row = mysqli_fetch_array($query_announcement);
 								 $id = $row['teacher_class_announcements_id'];

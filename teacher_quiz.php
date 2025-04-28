@@ -47,7 +47,7 @@
 										</thead>
 										<tbody>
                               		<?php
-										$query = mysqli_query($conn,"select * FROM quiz where teacher_id = '$session_id'  order by date_added DESC ")or die(mysqli_error());
+										$query = mysqli_query($conn,"select * FROM quiz where admin_id = '$session_id'  order by date_added DESC ")or die(mysqli_error());
 										while($row = mysqli_fetch_array($query)){
 										$id  = $row['quiz_id'];
 									?>                              

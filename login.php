@@ -13,10 +13,10 @@
 		$num_row_teacher = mysqli_num_rows($query_teacher);
 		$row_teahcer = mysqli_fetch_array($query_teacher);
 		if( $num_row > 0 ) { 
-		$_SESSION['id']=$row['student_id'];
+		$_SESSION['id']=$row['employee_id'];
 		echo 'true_student';	
 		}else if ($num_row_teacher > 0){
-		$_SESSION['id']=$row_teahcer['teacher_id'];
+		$_SESSION['id']=$row_teahcer['admin_id'];
 		echo 'true';
 		
 		 }else{ 

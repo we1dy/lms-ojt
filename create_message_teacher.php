@@ -20,16 +20,16 @@
 									<div class="control-group">
 											<label>To:</label>
                                           <div class="controls">
-                                            <select name="student_id"  class="chzn-select" required>
+                                            <select name="employee_id"  class="chzn-select" required>
                                              	<option></option>
 											<?php
 											$query = mysqli_query($conn,"select * from teacher_class_student
-																  LEFT JOIN student ON student.student_id = teacher_class_student.student_id
-											 group by teacher_class_student.student_id order by firstname ASC");
+																  LEFT JOIN student ON student.employee_id = teacher_class_student.employee_id
+											 group by teacher_class_student.employee_id order by firstname ASC");
 											while($row = mysqli_fetch_array($query)){
 											
 											?>
-											<option value="<?php echo $row['student_id']; ?>"><?php echo $row['firstname']; ?> <?php echo $row['lastname']; ?> </option>
+											<option value="<?php echo $row['employee_id']; ?>"><?php echo $row['firstname']; ?> <?php echo $row['lastname']; ?> </option>
 											<?php } ?>
                                             </select>
                                           </div>

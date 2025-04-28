@@ -14,7 +14,7 @@
                             <a href="department.php"><i class="icon-chevron-right"></i><i class="icon-building"></i> Department</a>
                         </li>
 						<li>
-                            <a href="students.php"><i class="icon-chevron-right"></i><i class="icon-group"></i> Students</a>
+                            <a href="students.php"><i class="icon-chevron-right"></i><i class="icon-group"></i> Employee</a>
                         </li>
 						<li  class="active">
                             <a href="teachers.php"><i class="icon-chevron-right"></i><i class="icon-group"></i> Admins</a>

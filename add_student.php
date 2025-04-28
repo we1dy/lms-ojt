@@ -65,7 +65,7 @@
 												
 										") or die(mysqli_error());
 										while ($row = mysqli_fetch_array($query)) {
-                                        $id = $row['student_id'];
+                                        $id = $row['employee_id'];
 										$a++;
 									
                                         ?>
@@ -82,9 +82,9 @@
 										<option>Add</option>
 										</select>
 										
-										<input type="hidden" name="student_id<?php echo $a; ?>" value="<?php echo $id; ?>">
+										<input type="hidden" name="employee_id<?php echo $a; ?>" value="<?php echo $id; ?>">
 										<input type="hidden" name="class_id<?php echo $a; ?>" value="<?php echo $get_id; ?>">
-										<input type="hidden" name="teacher_id<?php echo $a; ?>" value="<?php echo $session_id; ?>">
+										<input type="hidden" name="admin_id<?php echo $a; ?>" value="<?php echo $session_id; ?>">
 										
 										</td>
 									
@@ -109,17 +109,17 @@ if (isset($_POST['submit'])){
 
 		
 		
-	$test1 = "student_id".$b;
+	$test1 = "employee_id".$b;
 	$test2 = "class_id".$b;
-	$test3 = "teacher_id".$b;
+	$test3 = "admin_id".$b;
 	$test4 = "add_student".$b;
 	
 	$id = $_POST[$test1];
 	$class_id = $_POST[$test2];
-	$teacher_id = $_POST[$test3];
+	$admin_id = $_POST[$test3];
 	$Add = $_POST[$test4];
 	
- 	$query = mysqli_query($conn,"select * from teacher_class_student where student_id = '$id' and teacher_class_id = '$class_id' ")or die(mysqli_error());
+ 	$query = mysqli_query($conn,"select * from teacher_class_student where employee_id = '$id' and teacher_class_id = '$class_id' ")or die(mysqli_error());
 	$count = mysqli_num_rows($query); 
 	
  	if ($count > 0){ ?>
@@ -135,7 +135,7 @@ if (isset($_POST['submit'])){
 	if($Add == 'Add'){
 	
 	
-	mysqli_query($conn,"insert into teacher_class_student (student_id,teacher_class_id,teacher_id) values('$id','$class_id','$teacher_id') ")or die(mysqli_error());
+	mysqli_query($conn,"insert into teacher_class_student (employee_id,teacher_class_id,admin_id) values('$id','$class_id','$admin_id') ")or die(mysqli_error());
 	
 	
 	}else{

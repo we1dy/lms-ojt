@@ -47,7 +47,7 @@
 									
 									<?php
 								 $query_announcement = mysqli_query($conn,"select * from message
-																	LEFT JOIN student ON student.student_id = message.sender_id
+																	LEFT JOIN student ON student.employee_id = message.sender_id
 																	where  message.reciever_id = '$session_id' order by date_sended DESC
 																	")or die(mysqli_error());
 								$count_my_message = mysqli_num_rows($query_announcement);	

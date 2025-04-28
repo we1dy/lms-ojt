@@ -33,7 +33,7 @@
 												<?php
 											$subject_query = mysqli_query($conn,"select * from subject")or die(mysqli_error());
 											while($row = mysqli_fetch_array($subject_query)){
-											$id = $row['subject_id'];
+											$id = $row['course_id'];
 											?>
 										
 											<tr>

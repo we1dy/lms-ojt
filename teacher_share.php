@@ -51,8 +51,8 @@
 										<tbody>
                               		<?php
 										$query = mysqli_query($conn,"select * FROM teacher_shared
-										LEFT JOIN teacher on teacher_shared.teacher_id = teacher.teacher_id
-										where shared_teacher_id = '$session_id' 
+										LEFT JOIN teacher on teacher_shared.admin_id = teacher.admin_id
+										where shared_admin_id = '$session_id' 
 										order by fdatein DESC")or die(mysqli_error());
 										while($row = mysqli_fetch_array($query)){
 										$id  = $row['teacher_shared_id'];

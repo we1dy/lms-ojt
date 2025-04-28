@@ -9,11 +9,11 @@ $department_id = $_POST['department_id'];
 
 $query = mysqli_query($conn,"select * from teacher where  firstname='$firstname' and lastname='$lastname' and department_id = '$department_id'")or die(mysqli_error());
 $row = mysqli_fetch_array($query);
-$id = $row['teacher_id'];
+$id = $row['admin_id'];
 
 $count = mysqli_num_rows($query);
 if ($count > 0){
-	mysqli_query($conn,"update teacher set username='$username',password = '$password', teacher_status = 'Registered' where teacher_id = '$id'")or die(mysqli_error());
+	mysqli_query($conn,"update teacher set username='$username',password = '$password', teacher_status = 'Registered' where admin_id = '$id'")or die(mysqli_error());
 	$_SESSION['id']=$id;
 	echo 'true';
 }else{

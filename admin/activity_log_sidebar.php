@@ -1,4 +1,4 @@
-     <div class="span3" id="sidebar">
+<div class="span3" id="sidebar">
                     <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
                         <li> <a href="dashboard.php"><i class="icon-chevron-right"></i><i class="icon-home"></i>&nbsp;Dashboard</a> </li>
 						<li>
@@ -16,22 +16,22 @@
 						<li>
                             <a href="students.php"><i class="icon-chevron-right"></i><i class="icon-group"></i> Employee</a>
                         </li>
-						<!-- <li>
-                            <a href="teachers.php"><i class="icon-chevron-right"></i><i class="icon-group"></i> Teachers</a>
-                        </li> -->
+					 <li>
+                            <a href="teachers.php"><i class="icon-chevron-right"></i><i class="icon-group"></i> Admin</a>    
+                        </li> 
 						<li>
                             <a href="downloadable.php"><i class="icon-chevron-right"></i><i class="icon-download"></i> Downloadable Materials</a>
                         </li>
 						<li>
                             <a href="assignment.php"><i class="icon-chevron-right"></i><i class="icon-upload"></i> Uploaded Assignments</a>
                         </li>
-						<li>
+						<li >
                             <a href="content.php"><i class="icon-chevron-right"></i><i class="icon-file"></i> Content</a>
                         </li>
 						<li>
                             <a href="user_log.php"><i class="icon-chevron-right"></i><i class="icon-file"></i> User Log</a>
                         </li>
-						<li  class="active">
+						<li class="active">
                             <a href="activity_log.php"><i class="icon-chevron-right"></i><i class="icon-file"></i> Activity Log</a>
                         </li>
 						<li>

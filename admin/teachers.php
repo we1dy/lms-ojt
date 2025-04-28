@@ -35,7 +35,7 @@
 												 <?php
                                     $teacher_query = mysqli_query($conn,"select * from teacher") or die(mysqli_error());
                                     while ($row = mysqli_fetch_array($teacher_query)) {
-                                    $id = $row['teacher_id'];
+                                    $id = $row['admin_id'];
                                     $teacher_stat = $row['teacher_stat'];
                                         ?>
 									<tr>

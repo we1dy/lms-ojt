@@ -18,7 +18,7 @@ for($i=0; $i < $N; $i++)
 
 	
 	
-	mysqli_query($conn,"insert into files (floc,fdatein,fdesc,class_id,fname,teacher_id) value('$floc',NOW(),'$fdesc','$class_id','$fname','$session_id')")or die(mysqli_error());
+	mysqli_query($conn,"insert into files (floc,fdatein,fdesc,class_id,fname,admin_id) value('$floc',NOW(),'$fdesc','$class_id','$fname','$session_id')")or die(mysqli_error());
 	
 	
 	}

@@ -13,10 +13,10 @@
 					LEFT JOIN teacher_class ON teacher_class.teacher_class_id = teacher_class_student.teacher_class_id 
 					JOIN class ON class.class_id = teacher_class.class_id 
 					JOIN subject ON subject.subject_id = teacher_class.subject_id
-					where student_id = '$session_id'
+					where employee_id = '$session_id'
 					")or die(mysqli_error());
 					$row = mysqli_fetch_array($query);
-					$id = $row['teacher_class_student_id'];	
+					$id = $row['teacher_class_employee_id'];	
 					?>
 					     <ul class="breadcrumb">
 							<li><a href="#"><?php echo $row['class_name']; ?></a> <span class="divider">/</span></li>
@@ -40,11 +40,11 @@
 										 
 														$my_student = mysqli_query($conn,"SELECT *
 														FROM teacher_class_student
-														LEFT JOIN student ON student.student_id = teacher_class_student.student_id
+														LEFT JOIN student ON student.employee_id = teacher_class_student.employee_id
 														INNER JOIN class ON class.class_id = student.class_id where teacher_class_id = '$get_id' order by lastname ")or die(mysqli_error());
 														
 														while($row = mysqli_fetch_array($my_student)){
-														$id = $row['teacher_class_student_id'];
+														$id = $row['teacher_class_employee_id'];
 														?>
 														
 											<li id="del<?php echo $id; ?>">

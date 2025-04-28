@@ -7,7 +7,7 @@
                 <a class="brand" href="#">Welcome to: Online Learning Management System</a>
 					<div class="nav-collapse collapse">
 						<ul class="nav pull-right">
-							<?php $query= mysqli_query($conn,"select * from student where student_id = '$session_id'")or die(mysqli_error());
+							<?php $query= mysqli_query($conn,"select * from student where employee_id = '$session_id'")or die(mysqli_error());
 									$row = mysqli_fetch_array($query);
 							?>
 							<li class="dropdown">

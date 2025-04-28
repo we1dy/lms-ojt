@@ -45,7 +45,7 @@ for($i=0; $i < $N; $i++)
 	$fdesc = $row['fdesc'];
 
 	
-	mysqli_query($conn,"insert into teacher_backpack (floc,fdatein,fdesc,teacher_id,fname) value('$floc',NOW(),'$fdesc','$session_id','$fname')")or die(mysqli_error());
+	mysqli_query($conn,"insert into teacher_backpack (floc,fdatein,fdesc,admin_id,fname) value('$floc',NOW(),'$fdesc','$session_id','$fname')")or die(mysqli_error());
 	
 	
 	}
@@ -61,8 +61,8 @@ window.location = 'teacher_backack.php';
 
 if (isset($_POST['share'])){
 $id=$_POST['selector'];
-$teacher_id = $_POST['teacher_id1'];
-echo $teacher_id ; 
+$admin_id = $_POST['admin_id1'];
+echo $admin_id ; 
 $N = count($id);
 for($i=0; $i < $N; $i++)
 {
@@ -75,7 +75,7 @@ for($i=0; $i < $N; $i++)
 	$fdesc = $row['fdesc'];
 
 	
-	mysqli_query($conn,"insert into teacher_shared (floc,fdatein,fdesc,teacher_id,fname,shared_teacher_id) value('$floc',NOW(),'$fdesc','$session_id','$fname','$teacher_id')")or die(mysqli_error());
+	mysqli_query($conn,"insert into teacher_shared (floc,fdatein,fdesc,admin_id,fname,shared_admin_id) value('$floc',NOW(),'$fdesc','$session_id','$fname','$admin_id')")or die(mysqli_error());
 	
 	
 	}

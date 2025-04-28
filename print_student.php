@@ -36,10 +36,10 @@
 											
 												<?php
 														$my_student = mysqli_query($conn,"SELECT * FROM teacher_class_student
-														LEFT JOIN student ON student.student_id = teacher_class_student.student_id 
+														LEFT JOIN student ON student.employee_id = teacher_class_student.employee_id 
 														INNER JOIN class ON class.class_id = student.class_id where teacher_class_id = '$get_id' order by lastname ")or die(mysqli_error());
 														while($row = mysqli_fetch_array($my_student)){
-														$id = $row['teacher_class_student_id'];
+														$id = $row['teacher_class_employee_id'];
 														?>                          
 										<tr id="del<?php echo $id; ?>">
 									

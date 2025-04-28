@@ -8,7 +8,7 @@
                    <a class="brand" href="#">Welcome to PBCOM - Learning Admin Portal</a>
 							<div class="nav-collapse collapse">
 								<ul class="nav pull-right">
-												<?php $query= mysqli_query($conn,"select * from teacher where teacher_id = '$session_id'")or die(mysqli_error());
+												<?php $query= mysqli_query($conn,"select * from teacher where admin_id = '$session_id'")or die(mysqli_error());
 														$row = mysqli_fetch_array($query);
 												?>
 												<li class="dropdown">

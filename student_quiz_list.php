@@ -59,7 +59,7 @@
 										$quiz_id  = $row['quiz_id'];
 										$quiz_time  = $row['quiz_time'];
 									
-										$query1 = mysqli_query($conn,"select * from student_class_quiz where class_quiz_id = '$id' and student_id = '$session_id'")or die(mysqli_error());
+										$query1 = mysqli_query($conn,"select * from student_class_quiz where class_quiz_id = '$id' and employee_id = '$session_id'")or die(mysqli_error());
 										$row1 = mysqli_fetch_array($query1);
 										$grade = $row1['grade'];
 

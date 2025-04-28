@@ -41,7 +41,7 @@
 										<tbody>
 											
                               		<?php
-										$query = mysqli_query($conn,"select * FROM assignment where class_id = '$get_id' and teacher_id = '$session_id' order by fdatein DESC ")or die(mysqli_error());
+										$query = mysqli_query($conn,"select * FROM assignment where class_id = '$get_id' and admin_id = '$session_id' order by fdatein DESC ")or die(mysqli_error());
 										while($row = mysqli_fetch_array($query)){
 										$id  = $row['assignment_id'];
 										$floc  = $row['floc'];

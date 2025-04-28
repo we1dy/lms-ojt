@@ -28,7 +28,7 @@
                                 <div class="span12">
   								<div class="alert alert-info"><i class="icon-info-sign"></i> Please Fill in required details</div>
 								<?php
-								$query = mysqli_query($conn,"select * from teacher where teacher_id = '$session_id'")or die(mysqli_error());
+								$query = mysqli_query($conn,"select * from teacher where admin_id = '$session_id'")or die(mysqli_error());
 								$row = mysqli_fetch_array($query);
 								?>								
 										

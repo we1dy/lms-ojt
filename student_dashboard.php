@@ -31,8 +31,8 @@
 														LEFT JOIN teacher_class ON teacher_class.teacher_class_id = teacher_class_student.teacher_class_id 
 														LEFT JOIN class ON class.class_id = teacher_class.class_id 
 														LEFT JOIN subject ON subject.subject_id = teacher_class.subject_id
-														LEFT JOIN teacher ON teacher.teacher_id = teacher_class.teacher_id
-														where student_id = '$session_id' and school_year = '$school_year'
+														LEFT JOIN teacher ON teacher.admin_id = teacher_class.admin_id
+														where employee_id = '$session_id' and school_year = '$school_year'
 														")or die(mysqli_error());
 														$count = mysqli_num_rows($query);
 									?>

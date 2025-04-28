@@ -7,7 +7,7 @@ $N = count($id);
 for($i=0; $i < $N; $i++)
 {
 
-	mysqli_query($conn,"insert into notification_read (student_id,student_read,notification_id) values('$session_id','yes','$id[$i]')")or die(mysqli_error());
+	mysqli_query($conn,"insert into notification_read (employee_id,student_read,notification_id) values('$session_id','yes','$id[$i]')")or die(mysqli_error());
 	
 	
 	

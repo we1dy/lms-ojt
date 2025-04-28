@@ -13,10 +13,10 @@ for($i=0; $i < $N; $i++)
 	$fname = $row['fname'];
 	$floc = $row['floc'];
 	$fdesc = $row['fdesc'];
-	$teacher_id = $row['teacher_id'];
+	$admin_id = $row['admin_id'];
 	
 	
-	mysqli_query($conn,"insert into student_backpack (floc,fdatein,fdesc,student_id,fname) value('$floc',NOW(),'$fdesc','$session_id','$fname')")or die(mysqli_error());
+	mysqli_query($conn,"insert into student_backpack (floc,fdatein,fdesc,employee_id,fname) value('$floc',NOW(),'$fdesc','$session_id','$fname')")or die(mysqli_error());
 	
 	
 	}

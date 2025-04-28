@@ -1288,7 +1288,7 @@ CREATE TABLE `admin_notification` (------pinalitan
   `notification` varchar(100) NOT NULL,
   `date_of_notification` varchar(100) NOT NULL,
   `link` varchar(100) NOT NULL,
-  `student_id` int(11) NOT NULL,
+  `employee_id` int(11) NOT NULL,
   `assignment_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

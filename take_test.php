@@ -5,14 +5,14 @@
 <?php $quiz_id = $_GET['quiz_id']; ?>
 <?php $quiz_time = $_GET['quiz_time']; ?>
 
-<?php $query1 = mysqli_query($conn,"select * from student_class_quiz where student_id = '$session_id' and class_quiz_id = '$class_quiz_id' ")or die(mysqli_error());
+<?php $query1 = mysqli_query($conn,"select * from student_class_quiz where employee_id = '$session_id' and class_quiz_id = '$class_quiz_id' ")or die(mysqli_error());
 	  $count = mysqli_num_rows($query1);
 ?>
 
 <?php
 if ($count > 0){
 }else{
- mysqli_query($conn,"insert into student_class_quiz (class_quiz_id,student_id,student_quiz_time) values('$class_quiz_id','$session_id','$quiz_time')");
+ mysqli_query($conn,"insert into student_class_quiz (class_quiz_id,employee_id,student_quiz_time) values('$class_quiz_id','$session_id','$quiz_time')");
 }
  ?>
 
@@ -188,7 +188,7 @@ if($roww['question_type_id']=='2'){
 	</center>
 	<?php
 	/* echo "Your Percentage Grade is : <b>".$per."%</b>"; */
-	mysqli_query($conn,"UPDATE student_class_quiz SET `student_quiz_time` = 3600, `grade` = '".$score." out of ".($x-1)."' WHERE student_id = '$session_id' and class_quiz_id = '$class_quiz_id'")or die(mysqli_error());
+	mysqli_query($conn,"UPDATE student_class_quiz SET `student_quiz_time` = 3600, `grade` = '".$score." out of ".($x-1)."' WHERE employee_id = '$session_id' and class_quiz_id = '$class_quiz_id'")or die(mysqli_error());
 ?>
 <script>
 	  window.location = 'student_quiz_list.php<?php echo '?id='.$get_id; ?>'; 

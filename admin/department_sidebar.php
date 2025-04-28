@@ -16,9 +16,9 @@
 						<li>
                             <a href="students.php"><i class="icon-chevron-right"></i><i class="icon-group"></i> Employee</a>
                         </li>
-						<!-- <li>
-                            <a href="teachers.php"><i class="icon-chevron-right"></i><i class="icon-group"></i> Teachers</a>
-                        </li> -->
+					 <li>
+                            <a href="teachers.php"><i class="icon-chevron-right"></i><i class="icon-group"></i> Admins</a>    
+                        </li> 
 						<li>
                             <a href="downloadable.php"><i class="icon-chevron-right"></i><i class="icon-download"></i> Downloadable Materials</a>
                         </li>

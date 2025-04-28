@@ -7,7 +7,7 @@
                             </div>
                             <div class="block-content collapse in">
 							<?php
-							$query = mysqli_query($conn,"select * from student LEFT JOIN class ON class.class_id = student.class_id where student_id = '$get_id'")or die(mysqli_error());
+							$query = mysqli_query($conn,"select * from student LEFT JOIN class ON class.class_id = student.class_id where employee_id = '$get_id'")or die(mysqli_error());
 							$row = mysqli_fetch_array($query);
 							?>
                                 <div class="span12">
@@ -72,7 +72,7 @@
                                 $cys = $_POST['cys'];
                       
 
-								mysqli_query($conn,"update student set username = '$un' , firstname ='$fn' , lastname = '$ln' , class_id = '$cys' where student_id = '$get_id' ")or die(mysqli_error());
+								mysqli_query($conn,"update student set username = '$un' , firstname ='$fn' , lastname = '$ln' , class_id = '$cys' where employee_id = '$get_id' ")or die(mysqli_error());
 
 								?>
  
